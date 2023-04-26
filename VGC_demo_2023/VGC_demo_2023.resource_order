@@ -17,6 +17,7 @@
   ],
   "ResourceOrderSettings": [
     {"name":"rm_game","order":1,"path":"rooms/rm_game/rm_game.yy",},
+    {"name":"rm_settings","order":2,"path":"rooms/rm_settings/rm_settings.yy",},
     {"name":"obj_cam_controller","order":1,"path":"objects/obj_cam_controller/obj_cam_controller.yy",},
   ],
 }
