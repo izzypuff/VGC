@@ -1,0 +1,2 @@
+// screenshake timer
+shaking = false;
