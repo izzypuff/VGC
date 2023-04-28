@@ -1,7 +1,6 @@
 // inputs
 up_key = vk_up;
 down_key = vk_down;
-accept_key = vk_enter;
 
 options[0] = "Play";
 options[1] = "Settings";

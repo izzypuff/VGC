@@ -10,7 +10,7 @@ if (keyboard_check_pressed(down_key)) {
 	else { op_pos += 1; }
 }
 
-if (keyboard_check_pressed(accept_key)) {
+if (keyboard_check_pressed(global.accept_key)) {
 	switch (op_pos) {
 		// play
 		case 0:

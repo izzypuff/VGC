@@ -1,6 +1,7 @@
 {
   "FolderOrderSettings": [
     {"name":"Animation Curves","order":11,"path":"folders/Animation Curves.yy",},
+    {"name":"Characters","order":15,"path":"folders/Characters.yy",},
     {"name":"Extensions","order":12,"path":"folders/Extensions.yy",},
     {"name":"Fonts","order":6,"path":"folders/Fonts.yy",},
     {"name":"Notes","order":14,"path":"folders/Notes.yy",},
@@ -12,12 +13,19 @@
     {"name":"Sequences","order":10,"path":"folders/Sequences.yy",},
     {"name":"Shaders","order":5,"path":"folders/Shaders.yy",},
     {"name":"Sounds","order":2,"path":"folders/Sounds.yy",},
+    {"name":"UI","order":1,"path":"folders/Sprites/UI.yy",},
     {"name":"Tile Sets","order":1,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":7,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"rm_game","order":1,"path":"rooms/rm_game/rm_game.yy",},
+    {"name":"char_list","order":1,"path":"scripts/char_list/char_list.yy",},
+    {"name":"obj_settings","order":3,"path":"objects/obj_settings/obj_settings.yy",},
+    {"name":"spr_temp_portrait","order":2,"path":"sprites/spr_temp_portrait/spr_temp_portrait.yy",},
+    {"name":"obj_character","order":4,"path":"objects/obj_character/obj_character.yy",},
+    {"name":"spr_tb_narrator","order":1,"path":"sprites/spr_tb_narrator/spr_tb_narrator.yy",},
     {"name":"rm_settings","order":2,"path":"rooms/rm_settings/rm_settings.yy",},
+    {"name":"obj_textbox","order":2,"path":"objects/obj_textbox/obj_textbox.yy",},
     {"name":"obj_cam_controller","order":1,"path":"objects/obj_cam_controller/obj_cam_controller.yy",},
   ],
 }
