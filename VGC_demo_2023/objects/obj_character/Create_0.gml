@@ -4,7 +4,7 @@
 name = "";
 
 // textbox sprite
-textbox = spr_textbox;
+textbox_sprite = spr_textbox;
 
 portrait = spr_temp_portrait;
 

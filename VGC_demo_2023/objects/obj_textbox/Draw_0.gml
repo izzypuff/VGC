@@ -30,7 +30,7 @@ if (keyboard_check_pressed(global.accept_key)) {
 			draw_char = 0;
 		}
 		else {
-			instance_destroy();
+			visible = false;
 		}
 	}
 	else {
@@ -38,7 +38,16 @@ if (keyboard_check_pressed(global.accept_key)) {
 	}
 }
 
+cur_char = page_char[cur_page];
+// draw textbox based on character
+sprite_index = cur_char.textbox_sprite;
+if (cur_char.portrait != noone) {
+	// TODO set sub images for character (diff expressions)
+	//var _x = room_width / 2 + (80 * cur_char.portrait_side);
+	draw_sprite(cur_char.portrait, 0, 400, 200);
+}
+
 // draw text
-draw_set_font(fnt_futura); // temp, will set font based on character
+draw_set_font(fnt_futura); // TODO set font based on character
 var temp_text = string_copy(page[cur_page], 1, draw_char);
 draw_text_ext(x + padding, y + padding, temp_text, line_sep, line_width);

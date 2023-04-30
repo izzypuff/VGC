@@ -1,5 +1,11 @@
 // list of characters
 
-set_char("Devon", spr_textbox, spr_temp_portrait, -1, fnt_futura);
+function set_chars() {
 
-set_char("Narrator", spr_tb_narrator, noone);
+	global.char_devon = instance_create_layer(0, 0, "Characters", obj_character);
+	set_char(global.char_devon, "Devon", spr_textbox, spr_temp_portrait, -1, fnt_futura);
+
+	global.char_narrator = instance_create_layer(0, 0, "Characters", obj_character);
+	set_char(global.char_narrator, "Narrator", spr_tb_narrator, noone);
+
+}
