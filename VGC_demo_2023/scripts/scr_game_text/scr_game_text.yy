@@ -5,7 +5,7 @@
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "Characters",
-    "path": "folders/Characters.yy",
+    "name": "Textbox",
+    "path": "folders/Textbox.yy",
   },
 }
