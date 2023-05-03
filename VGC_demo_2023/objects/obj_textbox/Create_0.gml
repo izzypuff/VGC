@@ -14,6 +14,7 @@ page_char[0] = noone;
 
 // options
 option[0] = "";
+// stores link id for options
 option_link_id[0] = -1;
 option_pos = 0;
 option_amount = 0;

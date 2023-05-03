@@ -30,8 +30,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_ob_temp",
-    "path": "sprites/spr_ob_temp/spr_ob_temp.yy",
+    "name": "spr_type_temp",
+    "path": "sprites/spr_type_temp/spr_type_temp.yy",
   },
   "spriteMaskId": null,
   "visible": true,

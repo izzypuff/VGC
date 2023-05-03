@@ -11,13 +11,20 @@ function scr_text(_text, _char_name){
 			page_char[page_amount] = global.char_devon;
 		break;
 		
+		case "???":
+			page_char[page_amount] = global.char_devon_unknown;
+		break;
+		
 		case "mc":
-			show_debug_message("uh");
 			page_char[page_amount] = global.char_mc;
 		break;
 		
 		case "narrator":
 			page_char[page_amount] = global.char_narrator;
+		break;
+		
+		default:
+			show_debug_message("invalid character name");
 		break;
 	}
 	

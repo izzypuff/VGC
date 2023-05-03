@@ -123,6 +123,8 @@ if (keyboard_check_pressed(global.accept_key)) {
 }
 
 //-----draw textbox elements-----//
+show_debug_message(array_length(page_char));
+show_debug_message(cur_page);
 cur_char = page_char[cur_page];
 if (cur_char.portrait != noone) {
 	// TODO set sub images for character (diff expressions)
@@ -141,6 +143,7 @@ if (option_amount > 0) {
 		option_pos += keyboard_check_pressed(vk_down) - keyboard_check_pressed(vk_up);
 		option_pos = clamp(option_pos, 0, option_amount-1);
 	
+		// TODO draw in correct order
 		// draw the options
 		// space between the option boxes
 		var _op_space = 140;
@@ -151,7 +154,7 @@ if (option_amount > 0) {
 			var _y = 500 - _op_space * op;
 			draw_sprite_ext(cur_char.option_box, 0, 400, _y, global.ui_scale, global.ui_scale, image_angle, image_blend, image_alpha);
 		
-			draw_text(400 + _op_border, 500 - _op_space * op, option[op]);
+			draw_text(500 + _op_border, _y, option[op]);
 		}	
 		
 	}
