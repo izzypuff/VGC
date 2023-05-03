@@ -1,5 +1,3 @@
-draw_self();
-
 // set up box for the game's text
 if (setup == false) {
 	setup = true;
@@ -124,6 +122,18 @@ if (keyboard_check_pressed(global.accept_key)) {
 	}
 }
 
+//-----draw textbox elements-----//
+cur_char = page_char[cur_page];
+if (cur_char.portrait != noone) {
+	// TODO set sub images for character (diff expressions)
+	//var _x = room_width / 2 + (80 * cur_char.portrait_side);
+	var _y = camera_get_view_height(view_camera[0]);
+	draw_sprite_ext(cur_char.portrait, 0, 1500, _y, 0.5, 0.5, image_angle, image_blend, image_alpha);
+}
+// placed after portrait so textbox is on top
+// draw textbox based on character
+draw_sprite_ext(cur_char.textbox_sprite, 0, x, y, global.ui_scale, global.ui_scale, image_angle, image_blend, image_alpha);
+
 //-----draw options-----//
 if (option_amount > 0) {
 	if (draw_char >= page_length[cur_page] && cur_page == page_amount - 1) {
@@ -133,27 +143,18 @@ if (option_amount > 0) {
 	
 		// draw the options
 		// space between the option boxes
-		var _op_space = 120;
+		var _op_space = 140;
 		// the border in the boxes of the text
 		var _op_border = 25;
 		for (var op = 0; op < option_amount; op++) {
 			//var _o_w = string_width(option[op]) + _op_border*2;
-			draw_sprite(spr_ob_temp, 0, 400, 500 - _op_space * op);
+			var _y = 500 - _op_space * op;
+			draw_sprite_ext(cur_char.option_box, 0, 400, _y, global.ui_scale, global.ui_scale, image_angle, image_blend, image_alpha);
 		
 			draw_text(400 + _op_border, 500 - _op_space * op, option[op]);
 		}	
 		
 	}
-}
-
-//-----draw textbox elements-----//
-cur_char = page_char[cur_page];
-// draw textbox based on character
-sprite_index = cur_char.textbox_sprite;
-if (cur_char.portrait != noone) {
-	// TODO set sub images for character (diff expressions)
-	//var _x = room_width / 2 + (80 * cur_char.portrait_side);
-	draw_sprite(cur_char.portrait, 0, 400, 200);
 }
 
 //-----draw text-----//

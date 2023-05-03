@@ -12,13 +12,15 @@ function scr_text(_text, _char_name){
 		break;
 		
 		case "mc":
-			// main character
+			show_debug_message("uh");
+			page_char[page_amount] = global.char_mc;
 		break;
 		
 		case "narrator":
 			page_char[page_amount] = global.char_narrator;
 		break;
 	}
+	
 	
 	page_amount++;
 }

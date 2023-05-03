@@ -14,7 +14,10 @@ if (keyboard_check_pressed(global.accept_key)) {
 	switch (op_pos) {
 		// play
 		case 0:
-			room_goto(rm_game);
+			input_box.visible = true;
+			input_box.accepting = true;
+			layer_set_visible("Blackout", true);
+			//room_goto(rm_game);
 		break;
 		// settings
 		case 1:

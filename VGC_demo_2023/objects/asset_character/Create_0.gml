@@ -5,12 +5,14 @@
 name = "";
 
 // textbox sprite
-textbox_sprite = spr_textbox;
+textbox_sprite = noone;
 
-portrait = spr_temp_portrait;
+option_box = noone;
+
+portrait = noone;
 
 // left or right side of screen, -1 is left
-portrait_side = -1;
+portrait_side = 1;
 
 font = fnt_futura;
 

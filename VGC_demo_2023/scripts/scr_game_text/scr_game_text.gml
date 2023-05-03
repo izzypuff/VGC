@@ -8,7 +8,7 @@ function scr_game_text(_scene_id) {
 		#region // Opening
 		case "opening":
 			scr_text("He approaches you", "narrator");
-			scr_text(@"Testing a really long dialogue that will hopefully fill the entire box so I can test the line wrapping yipee!!", "narrator");
+			scr_text("Testing a really long dialogue that will hopefully fill the entire box so I can test the line wrapping yipee!!", "narrator");
 			scr_text("I'm Devon", "devon");
 			scr_text("Do you say hi?", "narrator");
 				scr_option("Yes", "opening - a");

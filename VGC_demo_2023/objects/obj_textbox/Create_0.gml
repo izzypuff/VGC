@@ -1,7 +1,7 @@
 // distance from text to sprite border
 padding = 50;
 line_sep = 100;
-line_width = sprite_width - padding*2 - 15;
+line_width = (sprite_get_width(spr_tb_devon)*global.ui_scale) - padding*2 - 15;
 
 // stores lines of text
 page[0] = "";
