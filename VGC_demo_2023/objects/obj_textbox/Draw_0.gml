@@ -113,7 +113,8 @@ if (keyboard_check_pressed(global.accept_key)) {
 			draw_char = 0;
 		}
 		else {
-			if (option_amount > 0) { clear_textbox(option_link_id[option_pos]); }
+			if (option_amount > 0) { scr_jump(option_link_id[option_pos]); }
+			else if (jump_link != "") { scr_jump(jump_link); }
 			else { visible = false; }
 		}
 	}
@@ -123,24 +124,33 @@ if (keyboard_check_pressed(global.accept_key)) {
 }
 
 //-----draw textbox elements-----//
-show_debug_message(array_length(page_char));
-show_debug_message(cur_page);
 cur_char = page_char[cur_page];
+if (cur_page < array_length(page_portrait)) { cur_portrait = page_portrait[cur_page]; }
+if (cur_portrait != noone) {
+	var _x = room_width / 2 + (80 * cur_char.portrait_side);
+	var _y = camera_get_view_height(view_camera[0]);
+	draw_sprite_ext(cur_portrait, 0, 1450, _y, 0.62, 0.62, image_angle, image_blend, image_alpha);
+}
 if (cur_char.portrait != noone) {
 	// TODO set sub images for character (diff expressions)
 	//var _x = room_width / 2 + (80 * cur_char.portrait_side);
-	var _y = camera_get_view_height(view_camera[0]);
-	draw_sprite_ext(cur_char.portrait, 0, 1500, _y, 0.5, 0.5, image_angle, image_blend, image_alpha);
+	//var _y = camera_get_view_height(view_camera[0]);
+	//draw_sprite_ext(cur_char.portrait, 0, 1450, _y, 0.62, 0.62, image_angle, image_blend, image_alpha);
 }
 // placed after portrait so textbox is on top
 // draw textbox based on character
 draw_sprite_ext(cur_char.textbox_sprite, 0, x, y, global.ui_scale, global.ui_scale, image_angle, image_blend, image_alpha);
+// draw name
+if (cur_char.name_font != noone) { 
+	draw_set_font(cur_char.name_font); 
+	draw_text(x+30, y-100, cur_char.char_name);
+}
 
 //-----draw options-----//
 if (option_amount > 0) {
-	if (draw_char >= page_length[cur_page] && cur_page == page_amount - 1) {
+	if (draw_char >= page_length[cur_page] and cur_page == page_amount - 1) {
 		// option selection
-		option_pos += keyboard_check_pressed(vk_down) - keyboard_check_pressed(vk_up);
+		option_pos -= keyboard_check_pressed(vk_down) - keyboard_check_pressed(vk_up);
 		option_pos = clamp(option_pos, 0, option_amount-1);
 	
 		// TODO draw in correct order
@@ -151,16 +161,23 @@ if (option_amount > 0) {
 		var _op_border = 25;
 		for (var op = 0; op < option_amount; op++) {
 			//var _o_w = string_width(option[op]) + _op_border*2;
+			var _x = 500;
 			var _y = 500 - _op_space * op;
-			draw_sprite_ext(cur_char.option_box, 0, 400, _y, global.ui_scale, global.ui_scale, image_angle, image_blend, image_alpha);
+			draw_sprite_ext(cur_char.option_box, 0, _x, _y, global.ui_scale, global.ui_scale, image_angle, image_blend, image_alpha);
 		
-			draw_text(500 + _op_border, _y, option[op]);
-		}	
+			if (cur_char.font != noone) { draw_set_font(cur_char.font); }
+			else { draw_set_font(fnt_futura); }
+			draw_text(_x+_op_border, _y, option[op]);
+		}
+		
+		// draw arrow indicator
+		draw_sprite_ext(spr_arrow_indicator, 0, _x-50, 500 - _op_space * option_pos, global.ui_scale, global.ui_scale, image_angle, image_blend, image_alpha);
 		
 	}
 }
 
 //-----draw text-----//
-draw_set_font(fnt_futura); // TODO set font based on character
+if (cur_char.font != noone) { draw_set_font(cur_char.font); }
+else { draw_set_font(fnt_futura); }
 var temp_text = string_copy(page[cur_page], 1, draw_char);
 draw_text_ext(x + padding, y + padding, temp_text, line_sep, line_width);

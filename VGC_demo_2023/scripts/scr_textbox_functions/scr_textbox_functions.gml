@@ -9,6 +9,7 @@ function scr_text(_text, _char_name){
 	switch (_char_name) {
 		case "devon":
 			page_char[page_amount] = global.char_devon;
+			global.char_devon.char_name = "Devon";
 		break;
 		
 		case "???":
@@ -24,7 +25,7 @@ function scr_text(_text, _char_name){
 		break;
 		
 		default:
-			show_debug_message("invalid character name");
+			show_error("Error: Invalid character name", true);
 		break;
 	}
 	
@@ -38,22 +39,32 @@ function scr_option(_option, _link_id) {
 	option_amount++;
 }
 
-function clear_textbox(_link_id) {
-	// clear pages
-	array_delete(page, 0, page_amount);
-	array_delete(page_length, 0, page_amount);
-	array_delete(page_char, 0, page_amount);
-	page_amount = 0;
-	cur_page = 0;
+function scr_set_sprite(_sprite) {
+	page_portrait[page_amount] = _sprite;
+}
+
+function scr_set_jump(_link_id) {
+	jump_link = _link_id;
+}
+
+function scr_jump(_link_id) {
+	if (cur_page == page_amount - 1) {
+		// clear pages
+		array_delete(page, 0, page_amount);
+		array_delete(page_length, 0, page_amount);
+		array_delete(page_char, 0, page_amount);
+		page_amount = 0;
+		cur_page = 0;
 				
-	scr_game_text(_link_id);
-	setup = false; // setup page lengths again
+		scr_game_text(_link_id);
+		setup = false; // setup page lengths again
 				
-	// clear options
-	array_delete(option, 0, option_amount);
-	array_delete(option_link_id, 0, option_amount);
-	option_amount = 0;
-	option_pos = 0;
+		// clear options
+		array_delete(option, 0, option_amount);
+		array_delete(option_link_id, 0, option_amount);
+		option_amount = 0;
+		option_pos = 0;
+	}
 }
 
 function scr_text_defaults(){

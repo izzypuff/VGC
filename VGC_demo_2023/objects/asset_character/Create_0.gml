@@ -2,7 +2,7 @@
 // object never actually appears in room
 // like unity scriptable objects
 
-name = "";
+char_name = "";
 
 // textbox sprite
 textbox_sprite = noone;
@@ -15,4 +15,5 @@ portrait = noone;
 portrait_side = 1;
 
 font = fnt_futura;
+name_font = fnt_futura;
 

@@ -41,6 +41,7 @@
     "IDEVersion": "2023.2.1.75",
   },
   "resources": [
+    {"id":{"name":"spr_arrow_indicator","path":"sprites/spr_arrow_indicator/spr_arrow_indicator.yy",},},
     {"id":{"name":"spr_tb_devon","path":"sprites/spr_tb_devon/spr_tb_devon.yy",},},
     {"id":{"name":"spr_blackout","path":"sprites/spr_blackout/spr_blackout.yy",},},
     {"id":{"name":"rm_game","path":"rooms/rm_game/rm_game.yy",},},
@@ -48,6 +49,7 @@
     {"id":{"name":"spr_tb_mc","path":"sprites/spr_tb_mc/spr_tb_mc.yy",},},
     {"id":{"name":"char_functions","path":"scripts/char_functions/char_functions.yy",},},
     {"id":{"name":"asset_scene","path":"objects/asset_scene/asset_scene.yy",},},
+    {"id":{"name":"fnt_devon","path":"fonts/fnt_devon/fnt_devon.yy",},},
     {"id":{"name":"spr_ob_narrator","path":"sprites/spr_ob_narrator/spr_ob_narrator.yy",},},
     {"id":{"name":"spr_portrait_devon","path":"sprites/spr_portrait_devon/spr_portrait_devon.yy",},},
     {"id":{"name":"spr_tb_narrator","path":"sprites/spr_tb_narrator/spr_tb_narrator.yy",},},

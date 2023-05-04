@@ -1,6 +1,6 @@
 // distance from text to sprite border
 padding = 50;
-line_sep = 100;
+line_sep = 80;
 line_width = (sprite_get_width(spr_tb_devon)*global.ui_scale) - padding*2 - 15;
 
 // stores lines of text
@@ -12,6 +12,9 @@ page_length[0] = string_length(page[0]);
 // will store which character is talking on each page
 page_char[0] = noone;
 
+cur_portrait = noone;
+page_portrait[0] = noone;
+
 // options
 option[0] = "";
 // stores link id for options
@@ -19,11 +22,13 @@ option_link_id[0] = -1;
 option_pos = 0;
 option_amount = 0;
 
-
 draw_char = 0;
 type_speed = 0.75;
 
 setup = false;
+
+// to store the scene id of the scene meant to be jumped to
+jump_link = "";
 
 cur_char = noone;
 create_chars();
