@@ -41,10 +41,10 @@ function scr_game_text(_scene_id) {
 				scr_text("All in all, he screams stereotypical guy FPS gamer.", "narrator");
 				scr_text("As you keep walking while lost in your thoughts, you start to realize you have no clue where he is taking you.", "narrator");
 				scr_text("By now you have probably passed by numerous amounts of classes and walked down lots of hallways but he has yet to say a word to you.", "narrator");
-				scr_text("In fact, he’s not even looking where he is going, he is playing a game on his phone.", "narrator");
-				scr_text("\"Hey… aren’t you supposed to show me around?\"", "mc");
+				scr_text("In fact, he's not even looking where he is going, he is playing a game on his phone.", "narrator");
+				scr_text("\"Hey... aren't you supposed to show me around?\"", "mc");
 				scr_text("\"I am.\"", "devon");
-				scr_text("\"But we’re just walking around, you haven’t told me what anything is.\"", "mc");
+				scr_text("\"But we're just walking around, you haven't told me what anything is.\"", "mc");
 				scr_text("\"Whattt do you need to know everything?? Jesus you freshmen are so annoying.\"", "devon");
 				scr_text("\"Fine. This is the...\"", "devon");
 				scr_text("He starts to tell you about the different classrooms.", "narrator");
@@ -52,7 +52,7 @@ function scr_game_text(_scene_id) {
 				scr_text("Being next to him allows you to see him better.", "narrator");
 				scr_text("His red hair is even messier from the front but, it's kind of cute in some way.", "narrator");
 				scr_text("\"Hellooo????? Are you even listening???\"", "devon");
-				scr_text("\"I’m sorry what?\"", "mc");
+				scr_text("\"I'm sorry what?\"", "mc");
 				scr_text("You did not realize it before but, he's a lot taller than you so he has to look down to talk to you.", "narrator");
 				scr_text("If you were to walk right into him, your head would be around his chest, perfect for a...", "narrator");
 				scr_set_jump("opening - cont");
@@ -62,7 +62,7 @@ function scr_game_text(_scene_id) {
 				scr_text("You choose to run up beside Devon, thinking that you might as well take the initiative to learn more about him and the school while you're at it.", "narrator");
 				scr_text("From the side, you can tell he walks around pretty hunched over.", "narrator");
 				scr_text("You judge him to be around 6 feet while hunched, meaning he could be around 6'3 when not, not that you care about height or anything...", "narrator");
-				scr_text("It's just that, most of the other guys you have encountered that play video games were on egirls.ff, the gaming platform where people can others you to play games with them.", "narrator");
+				scr_text("It's just that, most of the other guys you have encountered that play video games were on egirls.ff, the gaming platform where people can hire others you to play games with them.", "narrator");
 				scr_text("Although the site is riddled with misogynistic male gamers who really only use girl gamers as a way to make them feel better about themself that they are \"better\" than them, or just a way to be a simp, there was one experience you would never forget.", "narrator");
 				scr_text("One person who hired you that made you continue to be on that horrid site in hopes that he would do it again...", "narrator");
 				scr_text("As you keep walking while lost in your thoughts, you start to realize you have no clue where he is taking you.", "narrator");
@@ -74,7 +74,7 @@ function scr_game_text(_scene_id) {
 				scr_text("\"Whattt do you need to know everything?? Jesus you freshmen are so annoying.\"", "devon");
 				scr_text("\"Fine. This is the...\"", "devon");
 				scr_text("He starts to tell you about the different classrooms.", "narrator");
-				scr_text("As he does so, he runs his hands through his hair almost like a nervous habit, making you realize just how messy his reed hair was, but it was cute in a way.", "narrator")
+				scr_text("As he does so, he runs his hands through his hair almost like a nervous habit, making you realize just how messy his red hair was, but it was cute in a way.", "narrator")
 				scr_text("\"Hellooo????? Are you even listening???\"", "devon");
 				scr_text("\"I'm sorry what?\"", "mc");
 				scr_text("You did not realize it before, but his voice for some reason sounds really familiar...", "narrator");
@@ -86,16 +86,17 @@ function scr_game_text(_scene_id) {
 			scr_text("\"I asked where your class is! Jesus fucking Christ you are so lost in your own head you bubble-brain.\"", "devon");
 			scr_text("At this point, he has stopped walking and turned to face you.", "narrator");
 			scr_text("His eyes are filled with anger but for some reason, all you can focus on are them.", "narrator");
-			scr_text("\"Well uhhh.. I’m uh... that's the issue. I’m not sure....\"", "mc");
+			scr_text("\"Well uhhh.. I'm uh... that's the issue. I'm not sure....\"", "mc");
 			scr_text("\"Oh my fucking god\"", "devon");
-			scr_text("\"You really are hopeless aren’t you..\"", "devon");
-			scr_text("\"I can’t believe you are making me do all the damn work...\"", "devon");
+			scr_text("\"You really are hopeless aren't you..\"", "devon");
+			scr_text("\"I can't believe you are making me do all the damn work...\"", "devon");
 			scr_text("While he is doing that, you try your best to remember where your class is, but everything in this school is so confusing, like what is the \"Quest Center\" and \"Cornami Hall\"?", "narrator");
 			scr_text("\"Shit.\"", "devon");
 			scr_text("\"What?\"", "mc");
 			scr_text("You look at him to see his expression has changed from annoyance to something more akin to dread.", "narrator");
 			scr_text("\"Just follow me...\"", "devon");
 			scr_text("He sulks down the hallway towards your class, somehow hunching even more than before.", "narrator");
+			scr_set_jump("");
 		break;
 		#endregion 
 			
