@@ -1,4 +1,9 @@
 // TODO fix space inserted at beginning
+if (space_fixed == false) { 
+	keyboard_string = string_delete(keyboard_string, 1, 1); 
+	space_fixed = true;
+}
+
 
 draw_text(x, y-100, "What's your name?");
 

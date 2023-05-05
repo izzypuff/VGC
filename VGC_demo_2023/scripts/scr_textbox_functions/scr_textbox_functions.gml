@@ -34,13 +34,21 @@ function scr_text(_text, _char_name){
 }
 
 function scr_option(_option, _link_id) {
-	option[option_amount] = _option;
-	option_link_id[option_amount] = _link_id;
+	// insert at 0 so that options will be drawn in correct order
+	array_insert(option, 0, _option);
+	array_insert(option_link_id, 0, _link_id);
 	option_amount++;
 }
 
 function scr_set_sprite(_sprite) {
+	if (page_amount > 0) {
+		for (var p = last_portrait + 1; p < page_amount; p++) {
+			page_portrait[p] = page_portrait[last_portrait];
+		}
+	}
+	
 	page_portrait[page_amount] = _sprite;
+	last_portrait = page_amount;
 }
 
 function scr_set_jump(_link_id) {

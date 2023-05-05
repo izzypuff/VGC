@@ -13,3 +13,6 @@ alarm[0] = delay;
 accepting = false;
 
 enter_presses = 0;
+
+// to fix space inserted when pressing play
+space_fixed = false;

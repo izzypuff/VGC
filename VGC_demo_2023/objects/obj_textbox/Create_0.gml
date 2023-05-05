@@ -12,8 +12,13 @@ page_length[0] = string_length(page[0]);
 // will store which character is talking on each page
 page_char[0] = noone;
 
+//portrait
 cur_portrait = noone;
 page_portrait[0] = noone;
+portrait_alpha = 0;
+// stores the page number where the portrait was last set
+last_portrait = 0;
+fade_speed = 0.05;
 
 // options
 option[0] = "";
@@ -21,6 +26,10 @@ option[0] = "";
 option_link_id[0] = -1;
 option_pos = 0;
 option_amount = 0;
+
+// arrow indicator for options
+indicator = instance_create_layer(x, y, "Instances", obj_arrow_indicator);
+indicator.visible = false;
 
 draw_char = 0;
 type_speed = 0.75;

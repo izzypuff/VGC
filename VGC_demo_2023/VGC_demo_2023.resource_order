@@ -38,6 +38,7 @@
     {"name":"char_list","order":1,"path":"scripts/char_list/char_list.yy",},
     {"name":"obj_settings","order":3,"path":"objects/obj_settings/obj_settings.yy",},
     {"name":"spr_temp_portrait","order":2,"path":"sprites/spr_temp_portrait/spr_temp_portrait.yy",},
+    {"name":"obj_arrow_indicator","order":7,"path":"objects/obj_arrow_indicator/obj_arrow_indicator.yy",},
     {"name":"rm_settings","order":2,"path":"rooms/rm_settings/rm_settings.yy",},
     {"name":"obj_cam_controller","order":1,"path":"objects/obj_cam_controller/obj_cam_controller.yy",},
     {"name":"obj_type_input","order":6,"path":"objects/obj_type_input/obj_type_input.yy",},

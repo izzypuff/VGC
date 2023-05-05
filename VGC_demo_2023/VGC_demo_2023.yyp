@@ -62,6 +62,7 @@
     {"id":{"name":"spr_temp_portrait","path":"sprites/spr_temp_portrait/spr_temp_portrait.yy",},},
     {"id":{"name":"spr_ob_mc","path":"sprites/spr_ob_mc/spr_ob_mc.yy",},},
     {"id":{"name":"asset_character","path":"objects/asset_character/asset_character.yy",},},
+    {"id":{"name":"obj_arrow_indicator","path":"objects/obj_arrow_indicator/obj_arrow_indicator.yy",},},
     {"id":{"name":"rm_settings","path":"rooms/rm_settings/rm_settings.yy",},},
     {"id":{"name":"fnt_futura","path":"fonts/fnt_futura/fnt_futura.yy",},},
     {"id":{"name":"obj_textbox","path":"objects/obj_textbox/obj_textbox.yy",},},
