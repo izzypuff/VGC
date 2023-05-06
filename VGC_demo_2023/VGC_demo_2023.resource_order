@@ -1,12 +1,13 @@
 {
   "FolderOrderSettings": [
     {"name":"Animation Curves","order":10,"path":"folders/Animation Curves.yy",},
-    {"name":"Characters","order":14,"path":"folders/Characters.yy",},
     {"name":"Extensions","order":11,"path":"folders/Extensions.yy",},
     {"name":"Fonts","order":5,"path":"folders/Fonts.yy",},
+    {"name":"Game Elements","order":17,"path":"folders/Game Elements.yy",},
+    {"name":"Asset Objects","order":2,"path":"folders/Game Elements/Asset Objects.yy",},
+    {"name":"Scenes","order":1,"path":"folders/Game Elements/Scenes.yy",},
     {"name":"Notes","order":13,"path":"folders/Notes.yy",},
     {"name":"Objects","order":7,"path":"folders/Objects.yy",},
-    {"name":"Asset Objects","order":5,"path":"folders/Objects/Asset Objects.yy",},
     {"name":"Particle Systems","order":12,"path":"folders/Particle Systems.yy",},
     {"name":"Paths","order":3,"path":"folders/Paths.yy",},
     {"name":"Rooms","order":8,"path":"folders/Rooms.yy",},

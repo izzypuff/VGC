@@ -40,15 +40,36 @@ function scr_option(_option, _link_id) {
 	option_amount++;
 }
 
+/// @param sprite
+/// @param [easing]
 function scr_set_sprite(_sprite) {
+	// set in between sprites for pages
 	if (page_amount > 0) {
 		for (var p = last_portrait + 1; p < page_amount; p++) {
 			page_portrait[p] = page_portrait[last_portrait];
 		}
 	}
 	
+	
+	// optional paramater to toggle easing, default to true
+	if (argument_count > 1) { por_easing[page_amount] = argument[1]; }
+	else { por_easing[page_amount] = true; }
+	
 	page_portrait[page_amount] = _sprite;
 	last_portrait = page_amount;
+}
+
+/// @param bg_sprite;
+function scr_set_bg(_sprite) {
+	if (page_amount > 0) {
+		for (var p = last_bg + 1; p < page_amount; p++) {
+			page_bg[p] = page_bg[last_bg];
+		}
+	}
+	
+	page_bg[page_amount] = _sprite;
+	last_bg = page_amount;
+	
 }
 
 function scr_set_jump(_link_id) {
@@ -61,6 +82,9 @@ function scr_jump(_link_id) {
 		array_delete(page, 0, page_amount);
 		array_delete(page_length, 0, page_amount);
 		array_delete(page_char, 0, page_amount);
+		array_delete(page_bg, 0, page_amount);
+		array_delete(page_portrait, 0, page_amount);
+		array_delete(por_easing, 0, page_amount);
 		page_amount = 0;
 		cur_page = 0;
 				

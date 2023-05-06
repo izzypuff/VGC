@@ -1,11 +1,11 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "char_functions",
+  "name": "scene_functions",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "Characters",
-    "path": "folders/Game Elements/Characters.yy",
+    "name": "Scenes",
+    "path": "folders/Game Elements/Scenes.yy",
   },
 }

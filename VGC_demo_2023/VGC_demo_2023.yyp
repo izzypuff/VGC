@@ -12,12 +12,14 @@
   "defaultScriptType": 1,
   "Folders": [
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Animation Curves","folderPath":"folders/Animation Curves.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Characters","folderPath":"folders/Characters.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Extensions","folderPath":"folders/Extensions.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Fonts","folderPath":"folders/Fonts.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Game Elements","folderPath":"folders/Game Elements.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Asset Objects","folderPath":"folders/Game Elements/Asset Objects.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Characters","folderPath":"folders/Game Elements/Characters.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Scenes","folderPath":"folders/Game Elements/Scenes.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Notes","folderPath":"folders/Notes.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Objects","folderPath":"folders/Objects.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Asset Objects","folderPath":"folders/Objects/Asset Objects.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Particle Systems","folderPath":"folders/Particle Systems.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Paths","folderPath":"folders/Paths.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Rooms","folderPath":"folders/Rooms.yy",},
@@ -38,7 +40,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.2.1.75",
+    "IDEVersion": "2023.4.0.84",
   },
   "resources": [
     {"id":{"name":"spr_arrow_indicator","path":"sprites/spr_arrow_indicator/spr_arrow_indicator.yy",},},
@@ -56,6 +58,7 @@
     {"id":{"name":"scr_textbox_functions","path":"scripts/scr_textbox_functions/scr_textbox_functions.yy",},},
     {"id":{"name":"spr_type_temp","path":"sprites/spr_type_temp/spr_type_temp.yy",},},
     {"id":{"name":"spr_ob_devon","path":"sprites/spr_ob_devon/spr_ob_devon.yy",},},
+    {"id":{"name":"scene_functions","path":"scripts/scene_functions/scene_functions.yy",},},
     {"id":{"name":"scr_game_text","path":"scripts/scr_game_text/scr_game_text.yy",},},
     {"id":{"name":"char_list","path":"scripts/char_list/char_list.yy",},},
     {"id":{"name":"obj_settings","path":"objects/obj_settings/obj_settings.yy",},},

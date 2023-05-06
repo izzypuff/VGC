@@ -8,6 +8,7 @@ function scr_game_text(_scene_id) {
 		#region // Opening
 		case "opening":
 			scr_set_sprite(noone);
+			scr_set_bg(spr_hallway);
 			scr_text("An endless hall stretches out in front of you as you try and make sense of everything.", "narrator");
 			scr_text("Just a few moments ago you were standing in the courtyard of the school, listening to President Haime give his opening regards to you and the rest of the new students of Video Game College.", "narrator");
 			scr_text("But now, you stand in unknown territory, a new unexplored level exists in front of your eyes. The first part is always the hardest, finding the objective: class.", "narrator");
@@ -17,8 +18,8 @@ function scr_game_text(_scene_id) {
 			scr_text("Only this time, you have no locksmith coming to save you, you are alone in Trouser's castle. ", "narrator");
 			scr_text("\"Hey!\"", "???");
 			scr_text("Someone shouts from behind you. You whip your head around to see who is yelling at you, maybe they can be your Marco, your Chain, your-", "narrator");
-			scr_set_sprite(spr_portrait_devon);
 			scr_text("\"Yo! You! Yeah, I haven't got all day man. You're " + global.mc_name + " right?\"", "???");
+			scr_set_sprite(spr_portrait_devon);
 			scr_text("It was at this point you were fully able to see who was standing in front of you, a man with messy red hair and yellow sleepless eyes.", "narrator");
 			scr_text("And although one would think someone who is trying to greet someone would have a bright, welcoming expression on their face, his face says otherwise with his furrowed brows, and angry grin painted across his face.", "narrator");
 			scr_text("\"Well? I haven't got all day.\"", "???");
@@ -35,16 +36,18 @@ function scr_game_text(_scene_id) {
 				scr_option("Stand Next to Devon", "stand next to devon");
 		break;
 			case "stand behind devon":
+				scr_set_sprite(noone);
 				scr_text("You choose to run up behind Devon.", "narrator");
 				scr_text("From behind you are able to get a good idea of his character.", "narrator");
 				scr_text("His hair is messy, his clothes are wrinkled, and his back is hunched over.", "narrator");
 				scr_text("All in all, he screams stereotypical guy FPS gamer.", "narrator");
 				scr_text("As you keep walking while lost in your thoughts, you start to realize you have no clue where he is taking you.", "narrator");
 				scr_text("By now you have probably passed by numerous amounts of classes and walked down lots of hallways but he has yet to say a word to you.", "narrator");
+				scr_set_sprite(spr_portrait_devon);
 				scr_text("In fact, he's not even looking where he is going, he is playing a game on his phone.", "narrator");
 				scr_text("\"Hey... aren't you supposed to show me around?\"", "mc");
 				scr_text("\"I am.\"", "devon");
-				scr_text("\"But we're just walking around, you haven't told me what anything is.\"", "mc");
+				scr_text("\"But we're just walking arou  nd, you haven't told me what anything is.\"", "mc");
 				scr_text("\"Whattt do you need to know everything?? Jesus you freshmen are so annoying.\"", "devon");
 				scr_text("\"Fine. This is the...\"", "devon");
 				scr_text("He starts to tell you about the different classrooms.", "narrator");
@@ -59,6 +62,7 @@ function scr_game_text(_scene_id) {
 			break;
 			
 			case "stand next to devon":
+				scr_set_sprite(spr_portrait_devon);
 				scr_text("You choose to run up beside Devon, thinking that you might as well take the initiative to learn more about him and the school while you're at it.", "narrator");
 				scr_text("From the side, you can tell he walks around pretty hunched over.", "narrator");
 				scr_text("You judge him to be around 6 feet while hunched, meaning he could be around 6'3 when not, not that you care about height or anything...", "narrator");

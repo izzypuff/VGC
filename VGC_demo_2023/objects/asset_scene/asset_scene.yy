@@ -9,7 +9,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Asset Objects",
-    "path": "folders/Objects/Asset Objects.yy",
+    "path": "folders/Game Elements/Asset Objects.yy",
   },
   "parentObjectId": null,
   "persistent": false,

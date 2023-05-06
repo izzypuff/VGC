@@ -97,6 +97,11 @@ if (setup == false) {
 	}
 }
 
+if (cur_page < array_length(page_bg)) {
+	var layer_id = layer_get_id("Background");
+	layer_background_sprite(layer_id, page_bg[cur_page]);
+}
+
 #region //-----type each character-----//
 if (draw_char < page_length[cur_page]) {
 	draw_char += type_speed;
@@ -126,14 +131,19 @@ if (keyboard_check_pressed(global.accept_key)) {
 
 #region //-----draw textbox elements-----//
 cur_char = page_char[cur_page];
-if (cur_page < array_length(page_portrait)) { cur_portrait = page_portrait[cur_page]; }
+if (cur_page < array_length(page_portrait)) { 
+	if (cur_portrait != page_portrait[cur_page]) { portrait_alpha = 0; } // reset alpha
+	cur_portrait = page_portrait[cur_page]; 
+}
 
 if (cur_portrait != noone) {
 	var _x = room_width / 2 + (80 * cur_char.portrait_side);
 	var _y = camera_get_view_height(view_camera[0]);
 	draw_sprite_ext(cur_portrait, 0, 1450, _y, 0.6, 0.6, image_angle, image_blend, portrait_alpha);
-	portrait_alpha += fade_speed;
-	//show_debug_message(portrait_alpha);
+	if (cur_page < array_length(por_easing)) {
+		if (por_easing[cur_page]) { portrait_alpha += fade_speed; }
+		else { portrait_alpha = 1; }
+	}
 }
 // placed after portrait so textbox is on top
 // draw textbox based on character
