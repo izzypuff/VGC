@@ -17,11 +17,14 @@ if (keyboard_check_pressed(global.accept_key)) {
 			input_box.visible = true;
 			input_box.accepting = true;
 			layer_set_visible("Blackout", true);
-			//room_goto(rm_game);
 		break;
 		// settings
 		case 1:
-			room_goto(rm_settings);
+			room_goto(rm_credits);
+		break;
+		// quit
+		case 2:
+			game_end();
 		break;
 		
 	}

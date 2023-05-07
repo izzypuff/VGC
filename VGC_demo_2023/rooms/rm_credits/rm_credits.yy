@@ -1,7 +1,7 @@
 {
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
-  "name": "rm_settings",
+  "name": "rm_credits",
   "creationCodeFile": "",
   "inheritCode": false,
   "inheritCreationOrder": false,
