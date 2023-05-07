@@ -28,6 +28,7 @@ fade_speed = 0.05;
 
 #region //----background----//
 page_bg[0] = noone;
+cur_bg = noone;
 // stores page number where bg was last set
 last_bg = 0;
 #endregion
@@ -40,6 +41,13 @@ option_link_id[0] = -1;
 option_pos = 0;
 option_amount = 0;
 #endregion
+
+// stores screenshake signals (time and amount)
+shake_signal[0] = [0, 0];
+// to track if it has shaken so it only sends shake signal once
+shook = false;
+// stores page number where signal was last given
+last_signal = 0;
 
 // arrow indicator for options
 indicator = instance_create_layer(x, y, "Instances", obj_arrow_indicator);

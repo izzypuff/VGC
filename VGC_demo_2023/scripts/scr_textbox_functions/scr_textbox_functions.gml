@@ -24,6 +24,14 @@ function scr_text(_text, _char_name){
 			page_char[page_amount] = global.char_narrator;
 		break;
 		
+		case "ninez":
+			page_char[page_amount] = global.char_ninez;
+		break;
+		
+		case "arianna":
+			page_char[page_amount] = global.char_arianna;
+		break;
+		
 		default:
 			show_error("Error: Invalid character name", true);
 		break;
@@ -69,7 +77,6 @@ function scr_set_bg(_sprite) {
 	
 	page_bg[page_amount] = _sprite;
 	last_bg = page_amount;
-	
 }
 
 function scr_set_jump(_link_id) {
@@ -85,10 +92,12 @@ function scr_jump(_link_id) {
 		array_delete(page_bg, 0, page_amount);
 		array_delete(page_portrait, 0, page_amount);
 		array_delete(por_easing, 0, page_amount);
+		array_delete(shake_signal, 0, page_amount)
 		page_amount = 0;
 		cur_page = 0;
 				
 		scr_game_text(_link_id);
+		scr_text_defaults();
 		setup = false; // setup page lengths again
 				
 		// clear options
@@ -97,6 +106,17 @@ function scr_jump(_link_id) {
 		option_amount = 0;
 		option_pos = 0;
 	}
+}
+
+function scr_shake_signal(_time, _amount) {
+	if (page_amount > 0) {
+		for (var p = last_signal + 1; p < page_amount; p++) {
+			shake_signal[p] = [0,0];
+		}
+	}
+	
+	shake_signal[page_amount] = [_time, _amount];
+	last_signal = page_amount;
 }
 
 function scr_text_defaults(){

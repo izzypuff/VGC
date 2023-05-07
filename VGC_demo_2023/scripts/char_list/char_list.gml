@@ -17,4 +17,10 @@ function create_chars() {
 	global.char_mc = instance_create_layer(0, 0, "Characters", asset_character);
 	set_char(global.char_mc, global.mc_name, spr_tb_mc, spr_ob_mc, noone);
 
+	// Professor Ninez
+	global.char_ninez = instance_create_layer(0, 0, "Characters", asset_character);
+	set_char(global.char_ninez, "Ninez", spr_tb_narrator_tab, spr_ob_narrator, noone, 1, fnt_futura, fnt_futura);
+	
+	global.char_arianna = instance_create_layer(0, 0, "Characters", asset_character);
+	set_char(global.char_arianna, "Arianna", spr_tb_narrator_tab, spr_ob_narrator, noone, 1, fnt_futura, fnt_futura);
 }

@@ -98,9 +98,30 @@ if (setup == false) {
 }
 
 if (cur_page < array_length(page_bg)) {
-	var layer_id = layer_get_id("Background");
-	layer_background_sprite(layer_id, page_bg[cur_page]);
+	// layer_background_sprite() not working, just drawing manually
+	//var layer_id = layer_get_id("Background");
+	//layer_background_sprite(layer_id, page_bg[cur_page]);
+	cur_bg = page_bg[cur_page]
 }
+
+if (cur_bg != noone) { draw_sprite(cur_bg, 0, 0, 0); }
+
+show_debug_message(shake_signal[cur_page]);
+
+#region //----screen shake signals----//
+if (cur_page < array_length(shake_signal)) {
+	if (shake_signal[cur_page][0] == 0) {
+		shook = false;
+	}
+	else {
+		if (!shook) {
+			show_debug_message("shaking");
+			shake_screen(shake_signal[cur_page][0], shake_signal[cur_page][1]);
+			shook = true;
+		}
+	}
+}
+#endregion
 
 #region //-----type each character-----//
 if (draw_char < page_length[cur_page]) {
