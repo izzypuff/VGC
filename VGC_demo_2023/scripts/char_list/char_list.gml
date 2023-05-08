@@ -5,7 +5,7 @@ function create_chars() {
 	global.char_devon = instance_create_layer(0, 0, "Characters", asset_character);
 	set_char(global.char_devon, "Devon", spr_tb_devon, spr_ob_devon, spr_portrait_devon, -1, fnt_futura, fnt_devon);
 	
-	// Devon uknown ("???")
+	// Devon unknown ("???")
 	global.char_devon_unknown = instance_create_layer(0, 0, "Characters", asset_character);
 	set_char(global.char_devon_unknown, "???", spr_tb_devon, spr_ob_devon, spr_portrait_devon, -1, fnt_futura, fnt_devon);
 	
@@ -21,6 +21,12 @@ function create_chars() {
 	global.char_ninez = instance_create_layer(0, 0, "Characters", asset_character);
 	set_char(global.char_ninez, "Ninez", spr_tb_narrator_tab, spr_ob_narrator, noone, 1, fnt_futura, fnt_futura);
 	
+	// Arianna
 	global.char_arianna = instance_create_layer(0, 0, "Characters", asset_character);
 	set_char(global.char_arianna, "Arianna", spr_tb_narrator_tab, spr_ob_narrator, noone, 1, fnt_futura, fnt_futura);
+	
+	// Arianna unknown ("????");
+	global.char_ari_unknown = instance_create_layer(0, 0, "Characters", asset_character);
+	set_char(global.char_ari_unknown, "???", spr_tb_narrator_tab, spr_ob_narrator, noone, 1, fnt_futura, fnt_futura);
+	
 }

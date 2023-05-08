@@ -70,7 +70,7 @@ jump_link = "";
 cur_char = noone;
 create_chars();
 
-scr_game_text("opening");
+scr_game_text("dance");
 
 #region //----line wrapping----//
 // line wrapping

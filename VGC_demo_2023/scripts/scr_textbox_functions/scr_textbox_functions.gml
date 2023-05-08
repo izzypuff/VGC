@@ -32,6 +32,10 @@ function scr_text(_text, _char_name){
 			page_char[page_amount] = global.char_arianna;
 		break;
 		
+		case "????":
+			page_char[page_amount] = global.char_ari_unknown;
+		break;
+		
 		default:
 			show_error("Error: Invalid character name", true);
 		break;
@@ -58,7 +62,6 @@ function scr_set_sprite(_sprite) {
 		}
 	}
 	
-	
 	// optional paramater to toggle easing, default to true
 	if (argument_count > 1) { por_easing[page_amount] = argument[1]; }
 	else { por_easing[page_amount] = true; }
@@ -84,34 +87,32 @@ function scr_set_jump(_link_id) {
 }
 
 function scr_jump(_link_id) {
-	if (cur_page == page_amount - 1) {
-		// clear pages
-		array_delete(page, 0, page_amount);
-		array_delete(page_length, 0, page_amount);
-		array_delete(page_char, 0, page_amount);
-		array_delete(page_bg, 0, page_amount);
-		array_delete(page_portrait, 0, page_amount);
-		array_delete(por_easing, 0, page_amount);
-		array_delete(shake_signal, 0, page_amount)
-		page_amount = 0;
-		cur_page = 0;
-		last_portrait = 0;
-		last_bg = 0;
-		last_signal = 0;	
+
+	// clear pages
+	array_delete(page, 0, page_amount);
+	array_delete(page_length, 0, page_amount);
+	array_delete(page_char, 0, page_amount);
+	array_delete(page_bg, 0, page_amount);
+	array_delete(page_portrait, 0, page_amount);
+	array_delete(por_easing, 0, page_amount);
+	array_delete(shake_signal, 0, page_amount)
+	page_amount = 0;
+	cur_page = 0;
+	last_portrait = 0;
+	last_bg = 0;
+	last_signal = 0;	
+			
+	// clear options
+	array_delete(option, 0, option_amount);
+	array_delete(option_link_id, 0, option_amount);
+	option_link_id[0] = -1;
+	option_amount = 0;
+	option_pos = 0;	
 				
-		array_delete(option, 0, option_amount);
-		array_delete(option_link_id, 0, option_amount);
-				
-		jump_link = "";
-		scr_game_text(_link_id);
-		scr_text_defaults();
-		setup = false; // setup page lengths again
-		
-		// clear options
-		option_link_id[0] = -1;
-		option_amount = 0;
-		option_pos = 0;	
-	}
+	jump_link = "";
+	scr_game_text(_link_id);
+	scr_text_defaults();
+	setup = false; // setup page lengths again
 }
 
 function scr_shake_signal(_time, _amount) {

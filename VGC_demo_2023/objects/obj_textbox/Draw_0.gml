@@ -137,12 +137,16 @@ if (keyboard_check_pressed(global.accept_key)) {
 		if (cur_page < page_amount - 1) { 
 			cur_page++;
 			draw_char = 0;
+			// randomize pitch modifier
+			var _mod = random_range(0.01, 0.09);
+			audio_play_sound(sfx_forward, 1, false, 1, 0, 1+_mod);
 		}
 		else {
 			if (option_amount > 0) { 
 				audio_play_sound(sfx_select, 1, false);
 				scr_jump(option_link_id[option_pos]);
 			}
+			else if (jump_link == "credits") { room_goto(rm_credits); }
 			else if (jump_link != "") { scr_jump(jump_link); }
 			else { visible = false; }
 		}
@@ -166,21 +170,22 @@ if (cur_page < array_length(page_portrait)) {
 if (cur_portrait != noone) {
 	var _y = camera_get_view_height(view_camera[0]);
 	draw_sprite_ext(cur_portrait, 0, 1450, cur_por_y, 0.6, 0.6, image_angle, image_blend, portrait_alpha);
-	if (cur_page < array_length(por_easing) - 1) {
-		if (page_portrait[cur_page + 1] == noone) {
-			show_debug_message("fading");
+	//show_debug_message(string(cur_page) + ", " + string(array_length(page_portrait)));;
+	if (cur_page < array_length(page_portrait)) {
+		if (cur_page < array_length(page_portrait) - 1 and page_portrait[cur_page + 1] == noone) {
+			//show_debug_message("fading");
 			portrait_alpha = lerp(portrait_alpha, 0, fade_speed);
 		}
-		else if (por_easing[cur_page]) {
-			show_debug_message("easing");
+		else {
+			//show_debug_message("easing");
 			portrait_alpha = lerp(portrait_alpha, 1, fade_speed);
 			cur_por_y = lerp(cur_por_y, por_y, ease_speed);
 		}
-		else { 
-			show_debug_message("set");
-			portrait_alpha = 1;
-			cur_por_y = por_y;
-		}
+		//else { 
+		//	//show_debug_message("set");
+		//	portrait_alpha = 1;
+		//	cur_por_y = por_y;
+		//}
 	}
 }
 // placed after portrait so textbox is on top
