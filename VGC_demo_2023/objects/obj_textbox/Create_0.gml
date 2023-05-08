@@ -23,7 +23,11 @@ por_easing[0] = false;
 portrait_alpha = 0;
 // stores the page number where the portrait was last set
 last_portrait = 0;
-fade_speed = 0.05;
+fade_speed = 0.12;
+ease_speed = 0.15;
+por_y = camera_get_view_height(view_camera[0]);
+cur_por_y = por_y;
+ease_offset = 50;
 #endregion
 
 #region //----background----//
@@ -42,15 +46,18 @@ option_pos = 0;
 option_amount = 0;
 #endregion
 
+#region //----screenshake----//
 // stores screenshake signals (time and amount)
 shake_signal[0] = [0, 0];
 // to track if it has shaken so it only sends shake signal once
 shook = false;
 // stores page number where signal was last given
 last_signal = 0;
+#endregion
 
 // arrow indicator for options
 indicator = instance_create_layer(x, y, "Instances", obj_arrow_indicator);
+indicator.depth = -100;
 indicator.visible = false;
 
 draw_char = 0;

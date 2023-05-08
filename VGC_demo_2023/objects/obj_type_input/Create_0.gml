@@ -1,6 +1,6 @@
 message = "";
 
-padding = 15;
+padding = 20;
 
 limit = 20;
 

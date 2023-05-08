@@ -97,6 +97,7 @@ if (setup == false) {
 	}
 }
 
+#region //----draw background----//
 if (cur_page < array_length(page_bg)) {
 	// layer_background_sprite() not working, just drawing manually
 	//var layer_id = layer_get_id("Background");
@@ -105,17 +106,16 @@ if (cur_page < array_length(page_bg)) {
 }
 
 if (cur_bg != noone) { draw_sprite(cur_bg, 0, 0, 0); }
-
-show_debug_message(shake_signal[cur_page]);
+#endregion
 
 #region //----screen shake signals----//
-if (cur_page < array_length(shake_signal)) {
+if (cur_page < array_length(shake_signal) and cur_page > 0) {
 	if (shake_signal[cur_page][0] == 0) {
 		shook = false;
 	}
 	else {
 		if (!shook) {
-			show_debug_message("shaking");
+			// play sound?
 			shake_screen(shake_signal[cur_page][0], shake_signal[cur_page][1]);
 			shook = true;
 		}
@@ -139,7 +139,10 @@ if (keyboard_check_pressed(global.accept_key)) {
 			draw_char = 0;
 		}
 		else {
-			if (option_amount > 0) { scr_jump(option_link_id[option_pos]); }
+			if (option_amount > 0) { 
+				audio_play_sound(sfx_select, 1, false);
+				scr_jump(option_link_id[option_pos]);
+			}
 			else if (jump_link != "") { scr_jump(jump_link); }
 			else { visible = false; }
 		}
@@ -150,20 +153,34 @@ if (keyboard_check_pressed(global.accept_key)) {
 }
 #endregion
 
-#region //-----draw textbox elements-----//
+#region //-----draw textbox elements + portrait-----//
 cur_char = page_char[cur_page];
 if (cur_page < array_length(page_portrait)) { 
-	if (cur_portrait != page_portrait[cur_page]) { portrait_alpha = 0; } // reset alpha
+	if (cur_portrait != page_portrait[cur_page]) {
+		//portrait_alpha = 0; // reset alpha
+		cur_por_y = por_y - ease_offset; // reset position
+	} 
 	cur_portrait = page_portrait[cur_page]; 
 }
 
 if (cur_portrait != noone) {
-	var _x = room_width / 2 + (80 * cur_char.portrait_side);
 	var _y = camera_get_view_height(view_camera[0]);
-	draw_sprite_ext(cur_portrait, 0, 1450, _y, 0.6, 0.6, image_angle, image_blend, portrait_alpha);
-	if (cur_page < array_length(por_easing)) {
-		if (por_easing[cur_page]) { portrait_alpha += fade_speed; }
-		else { portrait_alpha = 1; }
+	draw_sprite_ext(cur_portrait, 0, 1450, cur_por_y, 0.6, 0.6, image_angle, image_blend, portrait_alpha);
+	if (cur_page < array_length(por_easing) - 1) {
+		if (page_portrait[cur_page + 1] == noone) {
+			show_debug_message("fading");
+			portrait_alpha = lerp(portrait_alpha, 0, fade_speed);
+		}
+		else if (por_easing[cur_page]) {
+			show_debug_message("easing");
+			portrait_alpha = lerp(portrait_alpha, 1, fade_speed);
+			cur_por_y = lerp(cur_por_y, por_y, ease_speed);
+		}
+		else { 
+			show_debug_message("set");
+			portrait_alpha = 1;
+			cur_por_y = por_y;
+		}
 	}
 }
 // placed after portrait so textbox is on top
@@ -177,36 +194,40 @@ if (cur_char.name_font != noone) {
 #endregion
 
 #region //-----draw options-----//
-if (option_amount > 0) {
-	if (draw_char >= page_length[cur_page] and cur_page == page_amount - 1) {
-		// option selection
-		option_pos -= keyboard_check_pressed(vk_down) - keyboard_check_pressed(vk_up);
-		option_pos = clamp(option_pos, 0, option_amount-1);
+if (setup == true) {
+	if (option_amount > 0) {
+		if (draw_char >= page_length[cur_page] and cur_page == page_amount - 1) {
+			// option selection
+			if (keyboard_check_pressed(vk_down) or keyboard_check_pressed(vk_up)) {
+				audio_play_sound(sfx_scroll, 1, false);
+			}
+			option_pos -= keyboard_check_pressed(vk_down) - keyboard_check_pressed(vk_up);
+			option_pos = clamp(option_pos, 0, option_amount-1);
 	
-		// draw the options
-		// space between the option boxes
-		var _op_space = 120;
-		// the border in the boxes of the text
-		var _op_border = 25;
-		for (var op = 0; op < option_amount; op++) {	
-			var _x = 600;
-			var _y = 540 - _op_space * op;
-			draw_sprite_ext(cur_char.option_box, 0, _x, _y, global.ui_scale, global.ui_scale, image_angle, image_blend, image_alpha);
+			// draw the options
+			// space between the option boxes
+			var _op_space = 120;
+			// the border in the boxes of the text
+			var _op_border = 25;
+			for (var op = 0; op < option_amount; op++) {	
+				var _x = 600;
+				var _y = 540 - _op_space * op;
+				draw_sprite_ext(cur_char.option_box, 0, _x, _y, global.ui_scale, global.ui_scale, image_angle, image_blend, image_alpha);
 		
-			if (cur_char.font != noone) { draw_set_font(cur_char.font); }
-			else { draw_set_font(fnt_futura); }
-			draw_text(_x+_op_border, _y, option[op]);
+				if (cur_char.font != noone) { draw_set_font(cur_char.font); }
+				else { draw_set_font(fnt_futura); }
+				draw_text(_x+_op_border, _y, option[op]);
+			}
+		
+			// draw arrow indicator
+			indicator.x = _x-50;
+			indicator.y = 540 - _op_space * option_pos;
+			indicator.visible = true;
 		}
-		
-		// draw arrow indicator
-		indicator.x = _x-50;
-		indicator.y = 540 - _op_space * option_pos;
-		indicator.visible = true;
-		
 	}
-}
-else {
-	indicator.visible = false;	
+	else {
+		indicator.visible = false;	
+	}
 }
 #endregion
 

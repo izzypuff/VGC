@@ -16,6 +16,7 @@ function scr_game_text(_scene_id) {
 			scr_text("Great, just great...", "mc");
 			scr_text("You feel like Princess Radish from Epic Marco Bros, a damsel in distress waiting for her beloved locksmith to come and save her.", "narrator");
 			scr_text("Only this time, you have no locksmith coming to save you, you are alone in Trouser's castle. ", "narrator");
+			scr_shake_signal(12, 10);
 			scr_text("\"Hey!\"", "???");
 			scr_text("Someone shouts from behind you. You whip your head around to see who is yelling at you, maybe they can be your Marco, your Chain, your-", "narrator");
 			scr_text("\"Yo! You! Yeah, I haven't got all day man. You're " + global.mc_name + " right?\"", "???");
@@ -24,12 +25,15 @@ function scr_game_text(_scene_id) {
 			scr_text("And although one would think someone who is trying to greet someone would have a bright, welcoming expression on their face, his face says otherwise with his furrowed brows, and angry grin painted across his face.", "narrator");
 			scr_text("\"Well? I haven't got all day.\"", "???");
 			scr_text("\"I'm sorry, who are you?\"", "mc");
-			scr_set_sprite(spr_devon_angry, false);
-			scr_text("\"Who am I?\"", "devon");
-			scr_set_sprite(spr_portrait_devon, false);
+			scr_set_sprite(spr_devon_angry);
+			scr_shake_signal(10, 5);
+			scr_text("\"Who am I?\"", "???");
+			scr_set_sprite(spr_portrait_devon);
 			scr_text("\"I'm Devon. I uh- I go here and I was unfortunately assigned to show you around the school since you're new.\"", "devon");
 			scr_text("Before you have a chance to introduce yourself or truly process what was going on, he cuts in again.", "narrator");
+			scr_set_sprite(noone);
 			scr_text("\"What's taking so long, I don't fucking have all day you know.\"", "devon");
+			scr_set_sprite(spr_portrait_devon);
 			scr_text("He begins to walk down the hallway, implying that you should follow him.", "narrator");
 			scr_text("In every other game you have ever played, the first character you meet is often the most important, but was he the one? ", "narrator");
 			scr_text("Was he your Marco or Chain to lead you through the dystopian world of Video Game College, or would he just be a forgettable NPC?", "narrator");
@@ -49,13 +53,14 @@ function scr_game_text(_scene_id) {
 				scr_text("In fact, he's not even looking where he is going, he is playing a game on his phone.", "narrator");
 				scr_text("\"Hey... aren't you supposed to show me around?\"", "mc");
 				scr_text("\"I am.\"", "devon");
-				scr_text("\"But we're just walking arou  nd, you haven't told me what anything is.\"", "mc");
+				scr_text("\"But we're just walking around, you haven't told me what anything is.\"", "mc");
 				scr_text("\"Whattt do you need to know everything?? Jesus you freshmen are so annoying.\"", "devon");
 				scr_text("\"Fine. This is the...\"", "devon");
 				scr_text("He starts to tell you about the different classrooms.", "narrator");
 				scr_text("It is at this point you walk up beside him to see what he is pointing at.", "narrator");
 				scr_text("Being next to him allows you to see him better.", "narrator");
 				scr_text("His red hair is even messier from the front but, it's kind of cute in some way.", "narrator");
+				scr_set_sprite(spr_devon_angry, true);
 				scr_text("\"Hellooo????? Are you even listening???\"", "devon");
 				scr_text("\"I'm sorry what?\"", "mc");
 				scr_text("You did not realize it before but, he's a lot taller than you so he has to look down to talk to you.", "narrator");
@@ -64,7 +69,7 @@ function scr_game_text(_scene_id) {
 			break;
 			
 			case "stand next to devon":
-				scr_set_sprite(spr_portrait_devon);
+				scr_set_sprite(noone);
 				scr_text("You choose to run up beside Devon, thinking that you might as well take the initiative to learn more about him and the school while you're at it.", "narrator");
 				scr_text("From the side, you can tell he walks around pretty hunched over.", "narrator");
 				scr_text("You judge him to be around 6 feet while hunched, meaning he could be around 6'3 when not, not that you care about height or anything...", "narrator");
@@ -73,6 +78,7 @@ function scr_game_text(_scene_id) {
 				scr_text("One person who hired you that made you continue to be on that horrid site in hopes that he would do it again...", "narrator");
 				scr_text("As you keep walking while lost in your thoughts, you start to realize you have no clue where he is taking you.", "narrator");
 				scr_text("By now you have probably passed by numerous amounts of classes and walked down lots of hallways but he has yet to say a word to you.", "narrator");
+				scr_set_sprite(spr_portrait_devon);
 				scr_text("In fact, he's not even looking where he is going, he is playing a game on his phone.", "narrator");
 				scr_text("\"Hey... aren't you supposed to show me around?\"", "mc");
 				scr_text("\"I am.\"", "devon");
@@ -81,6 +87,7 @@ function scr_game_text(_scene_id) {
 				scr_text("\"Fine. This is the...\"", "devon");
 				scr_text("He starts to tell you about the different classrooms.", "narrator");
 				scr_text("As he does so, he runs his hands through his hair almost like a nervous habit, making you realize just how messy his red hair was, but it was cute in a way.", "narrator")
+				scr_set_sprite(spr_devon_angry, true);
 				scr_text("\"Hellooo????? Are you even listening???\"", "devon");
 				scr_text("\"I'm sorry what?\"", "mc");
 				scr_text("You did not realize it before, but his voice for some reason sounds really familiar...", "narrator");
@@ -118,11 +125,11 @@ function scr_game_text(_scene_id) {
 			scr_text("\"Weren't you just here to show me around? Why are you now taking a seat in the class?\"", "mc");
 			scr_text("He groans and turns to you. At this point, he had put his headphones on and was playing some game on his phone, so he moves his right headphone off of his ear and glances back up at you.", "narrator");
 			scr_set_sprite(spr_portrait_devon);
-			scr_text("\"I'm in this class, you idi  ot.\"", "devon");
+			scr_text("\"I'm in this class, you idiot.\"", "devon");
 			scr_text("What?...", "mc");
 			scr_text("You stand there frozen for a second, not sure how to respond. This was Intro to Team Games, a freshman-level class in the FPS track. So why was he in it? Before you could ask him, however, the professor at the front of the room started to talk.", "narrator");
-			scr_set_sprite(noone);
 			scr_text("\"Hello I am Professor Ninez and welcome to Intro to Team Games. This class is about building synergy with your teammates while playing competitive team games.\"", "ninez");
+			scr_set_sprite(noone);
 			scr_text("\"Prior to the start of class you all submitted your preferred game you would like to focus on and your rank in that game in order for me to be able to pair you up with someone who matched that.\"", "ninez");
 			scr_text("You remember that form. You filled out Valliant as your game of choice and your rank of diamond 1. ", "narrator");
 			scr_text("You have played Valliant for a pretty long time and considered yourself good at the game for your standards. You always had good positioning, coms, map awareness, and lineups, the only thing lacking was your aim.", "narrator");
@@ -141,13 +148,13 @@ function scr_game_text(_scene_id) {
 			scr_text("You see two people look at each other with smiles on their faces. One has shoulder-length black wavy hair, and the other has purple and brown wavy hair in a wolf cut.", "narrator");
 			scr_text("\"...Isabel and Stacey...\"", "ninez");
 			scr_text("Two girls turn to each other also smiling, one with mid-length straight black hair and bangs, the other with mid-length straight brown hair.", "narrator");
-			// screen shake signal
+			scr_shake_signal(20, 10);
 			scr_text("\"..." + global.mc_name + " and Devon\"", "ninez");
 			scr_text("Your heart stops.", "narrator");
 			scr_text("Did he just call your name? And more importantly, did he just say Devon? As in the Devon right next to you? As in the Devon terribly playing Valliant? Oh no...", "mc");
 			scr_set_sprite(spr_devon_angry);
 			scr_text("You turn to look at him to see that his game finished just as the Professor announced you two as teammates. The red loss screen plastered on his screen, as he turns to look at you, rage in his eyes.", "narrator");
-			scr_text("Oh fuck… this is going to be a challenge.", "mc");
+			scr_text("Oh fuck... this is going to be a challenge.", "mc");
 			scr_set_sprite(noone);
 			scr_text("\"Alright well that was everyone. Class is dismissed but make sure you exchange information with your partner and agree to times in which you can play together! There will be an assessment of your team synergy every week!\"", "ninez");
 			scr_text("The class erupts with voices of people talking to each other, exchanging information, and making plans, the only two not participating in the discord are you and Devon.", "narrator");
@@ -156,44 +163,52 @@ function scr_game_text(_scene_id) {
 			scr_text("You race out of the room trying to find him through the hallway but luckily because of his height and red hair, you were able to spot him just down the hallway. You race after him.", "narrator");
 			scr_text("\"Damn him and his long legs...\"", "mc");
 			scr_text("You really have to pick up the pace to get to him.", "narrator");
+			scr_shake_signal(10, 10);
 			scr_text("\"Devon!\"", "mc");
 			scr_text("You yell down the hallway, slightly out of breath. He does not turn around and instead starts to move faster.", "narrator");
+			scr_shake_signal(15, 12);
 			scr_text("\"Devon!!!\"", "mc");
 			scr_text("You yell even louder before basically sprinting down the hallway.", "narrator");
-			// screen shake signal
+			scr_shake_signal(25, 14);
 			scr_text("\"Devon!!!!!!\"", "mc");
 			scr_text("You scream, extremely out of breath. At this point, many people have stopped to look at you both as you race down the hallways.", "narrator");
 			scr_text("As you are nearing your limit of how much you can run, your breathing becomes heavy and your legs feel like they could give out at any second.", "narrator");
 			scr_text("You close your eyes and speed up one last time, trying to reach him before it is too late. ", "narrator");
 			scr_text("It all happened in a flash, suddenly Devon stopped in front of you, but you were going too fast to slow down that abruptly. His eyes widened as he realized what was about to happen.", "narrator");
 			scr_text("You closed them knowing what was about to happen and then bam!", "narrator");
-			// screen shake signal
-			scr_text("You ran face-first into his chest and then with a thud fell back. Except something was missing, there was not a thud of you falling onto the cold hard ground, instead, you felt hands grasping you.", "narrator");
+			scr_set_bg(noone);
+			scr_shake_signal(15, 20);
+			scr_text("You ran face-first into his chest and then with a thud fell back.", "narrator");
+			scr_set_bg(bg_hallway);
+			scr_text("Except something was missing, there was not a thud of you falling onto the cold hard ground, instead, you felt hands grasping you.", "narrator");
 			scr_text("You open your eyes to see Devon holding you.", "narrator");
 			scr_text("\"I uh-\"", "mc");
 			scr_text("You are barely able to make out a word as you look up at him simultaneously starstruck but also embarrassed.", "narrator");
 			scr_text("His face is a weird mix of surprised but also annoyed. His mouth is ajar as if surprised and slightly scared that you ran directly into him, but his eyes and brows say otherwise, turned inwards with a look of annoyance at you for causing all this trouble.", "narrator");
 			scr_text("He lets go of you and you stumble back to catch yourself. ", "narrator");
-			// screen shake signal
+			scr_shake_signal(15, 10);
+			scr_set_sprite(spr_devon_angry)
 			scr_text("\"What the fuck was that?!\"", "devon");
 			scr_text("\"Well, you decided to just run out of the class before we were able to talk about anything! We are partners, meaning we need to exchange information, talk about when we are-\"", "mc");
-			scr_text("\"Just shut up. I don’t care about that class so you can go ahead and ask the professor for a new partner.\"", "devon");
+			scr_text("\"Just shut up. I don't care about that class so you can go ahead and ask the professor for a new partner.\"", "devon");
 			scr_text("\"But the class has an even amount of people, there is no one else I could be with.\"", "mc");
 			scr_text("\"I do not give a shit. Figure it out bubble-brain.\"", "devon");
 			scr_text("He turns around to start walking away again.", "narrator");
+			scr_set_sprite(noone);
 			scr_text("At this point, you were so done with him and his attitude that you did something you normally would not do, but you were just so angry.", "narrator");
-			scr_text("\"Do you think you can pass this class on your own? What happened last year huh? I guess Mr. Platinum in Valliant who doesn't know how to play with his team in the game also doesn’t know how to be friends with people in real life. Fucking figures…\"", "mc");
+			scr_text("\"Do you think you can pass this class on your own? What happened last year huh? I guess Mr. Platinum in Valliant who doesn't know how to play with his team in the game also doesn't know how to be friends with people in real life. Fucking figures...\"", "mc");
 			scr_text("You blurted it out before turning away yourself. You were so done with him. If he wanted to fail the class he could but you were not going to.", "narrator");
 			scr_text("Before you could take another step, you felt a strong hand gripping your shoulder.", "narrator");
+			scr_shake_signal(15, 10);
 			scr_set_sprite(spr_devon_angry);
 			scr_text("\"What the fuck did you just say to me bitch!?\"", "devon");
 			scr_text("Up until this point you have not felt any harmful intent in anything he has said, most of it was just annoyance, but now it was different, he was angry.", "narrator");
 			scr_text("You shakily turn around to face him, feeling like a deer in headlights. His eyes are full of pure rage like he could snap again at any moment.", "narrator");
 			scr_text("\"I'm sorry I just-\"", "mc");
 			scr_text("Before you can choke out the rest of the sentence, he pushes you backwards, making you almost fall down for real this time.", "narrator");
-			scr_text("\"Fine, you want to play, let's play, but I’m just warning you if you EVER raise your voice at me again, or even think that you know more than me then prepare for hellfire because I won't stop until you. Are. Powerless.\"", "devon");
+			scr_text("\"Fine, you want to play, let's play, but I'm just warning you if you EVER raise your voice at me again, or even think that you know more than me then prepare for hellfire because I won't stop until you. Are. Powerless.\"", "devon");
 			scr_text("He stares you down, eyes filled with rage.", "narrator");
-			scr_text("You’re not quite sure how to respond. Every bone in your body is telling you to be scared, to back away, but there’s something deep down that tells you otherwise, something telling you to reach out.", "narrator");
+			scr_text("You're not quite sure how to respond. Every bone in your body is telling you to be scared, to back away, but there's something deep down that tells you otherwise, something telling you to reach out.", "narrator");
 				scr_option("Back Away", "team assignments - back away");
 				scr_option("Reach Out", "team assignments - reach out");
 		break;
@@ -229,9 +244,9 @@ function scr_game_text(_scene_id) {
 			break;
 				
 			case "team assignments - reach out":
-				scr_text("You are not sure why, but something deep down inside of you was telling you to reach out. You place your hand on Devon’s shoulder, matching his on your shoulder.", "narrator");
+				scr_text("You are not sure why, but something deep down inside of you was telling you to reach out. You place your hand on Devon's shoulder, matching his on your shoulder.", "narrator");
 				scr_text("Something inside of you has flipped, no longer is your mind clouded by fear, but instead, you have a driving force to understand. Understand why he just lashed out.", "narrator");
-				scr_text("Devon’s face changes when you place your hand on his shoulder. Your face was full of fear just a second ago but now it is painted with a look of determination.", "narrator");
+				scr_text("Devon's face changes when you place your hand on his shoulder. Your face was full of fear just a second ago but now it is painted with a look of determination.", "narrator");
 				scr_set_sprite(spr_devon_angry);
 				scr_text("\"What the fuck are you doing?\"", "devon");
 				scr_text("\"Devon the point of this class is to build a relationship with someone, not only as a teammate but as a friend. You are going to be my duo whether you like it or not. I want to be someone you can trust.\"", "mc");
@@ -240,11 +255,11 @@ function scr_game_text(_scene_id) {
 				scr_text("As you say that, there is a slight moment in which his face turns from its usual sleep-deprived pale to a pinkish color, but just like that it is gone.", "narrator");
 				scr_set_sprite(spr_devon_smirk, false);
 				scr_text("He now smirks, looking down at you, his hand gripping your shoulder tighter.", "narrator");
-				scr_text("\"Oh yeah? Prove it. Friday, my place. Bring ur set up. Oh and uh, and u better not int. We’ll see if u actually can be a teammate I can trust.\"", "devon");
+				scr_text("\"Oh yeah? Prove it. Friday, my place. Bring ur set up. Oh and uh, and u better not int. We'll see if u actually can be a teammate I can trust.\"", "devon");
 				scr_text("He pushes you back with his hand, causing your hold on his shoulder to drop.", "narrator");
 				scr_set_sprite(spr_portrait_devon, false);
 				scr_text("You were intrigued, to say the least, and something more than that to say the most.", "narrator");
-				scr_text("This is the first time he has shown you any positive sign of emotion and it can’t help but make you wonder why his voice sounded so damn familiar to you.", "narrator");
+				scr_text("This is the first time he has shown you any positive sign of emotion and it can't help but make you wonder why his voice sounded so damn familiar to you.", "narrator");
 				scr_text("\"Alright sounds like a plan!\"", "mc");
 				scr_text("Devon pulls out his phone quickly while you smirk back at him. He hands you his phone, on it is a new contact page. You enter in your name and number before returning the phone back to him.", "narrator");
 				scr_text("\"See you on Friday then.\"", "mc");
@@ -261,7 +276,7 @@ function scr_game_text(_scene_id) {
 		case "friday - back away":
 			scr_set_bg(noone);
 			scr_text("The dreaded day finally arrived: Friday. After a long week of moving in, classes, exploring the campus, and doing homework, you had hoped that Friday would never arrive.", "narrator");
-			scr_text("After your and Devon’s whole argument, you had tried to convince yourself that Friday was going to be ok, but you were still nervous. You doubted he would apologize to you but at the same time, you did not even want one, you just wanted to get this over with.", "narrator");
+			scr_text("After your and Devon's whole argument, you had tried to convince yourself that Friday was going to be ok, but you were still nervous. You doubted he would apologize to you but at the same time, you did not even want one, you just wanted to get this over with.", "narrator");
 			scr_text("Once you got to Irradiant Hall you begrudgingly took the elevator to the 6th floor before turning down the hall to find room 609.", "narrator");
 			scr_text("You took a deep breath before raising your hand to knock on the door. This was it, the beginning of your most dreaded nightmare of the week, spending time with Devon.", "narrator");
 			scr_text("You knock on the door and within seconds Devon opens the door.", "narrator");
@@ -269,7 +284,7 @@ function scr_game_text(_scene_id) {
 			scr_text("\"Hey.\"", "mc");
 			scr_text("\"Hey.\"", "devon");
 			scr_text("He moves out of the way so you can enter his room.", "narrator");
-			// devon room bg
+			scr_set_bg(bg_bedroom);
 			scr_text("The room is pretty bland, basically the same as it is given to you when you first move in, except for his desk which harbors a massive PC and 3 monitors as well as the singular poster on his wall along with LED lights around the room.", "narrator");
 			scr_text("You move towards his desk so you can pull out your laptop. Back at your dorm, you have an actual PC set up but you also have a gaming laptop for cases like these in school where you need to play games on the fly.", "narrator");
 			scr_text("Your laptop kind of sucked since you got it secondhand and it is an older model, but it does what it needs to do, minus the fact that it gets extremely hot if you even attempt to open any game on it.", "narrator");
@@ -278,21 +293,21 @@ function scr_game_text(_scene_id) {
 			scr_text("You look over to him to see him opening up Valliant but instead of an emotionless expression on his face, he looks angry.", "narrator");
 			scr_text("Why is he angry? To be honest, you don't really want to ask.", "mc");
 			scr_text("After a few rounds in the game, after he dies, Devon gets up to quickly use the bathroom. You had ended up dying with him to a Raise bomb and so you just sat flipping through the other 3 players left, watching the round play out.", "narrator");
-			scr_text("After a few seconds you feel a buzz coming to your right. You look over to see Devon’s phone face up on the table. Without meaning to, you saw what the notification was.", "narrator");
+			scr_text("After a few seconds you feel a buzz coming to your right. You look over to see Devon's phone face up on the table. Without meaning to, you saw what the notification was.", "narrator");
 			scr_text("It was from egirls.ff. You were not able to read the contents of the message since the phone had to be unlocked with face ID, but you could see that it was from egirls.ff.", "narrator");
 			scr_text("He has egirls.ff??? Why would he have it though?", "mc");
 			scr_text("You remember his visible anger earlier. Before the game started you had briefly seen his past match history and seen that he had lost his past 2 ranked games.", "narrator");
 			scr_text("Could it be because of egirls.ff? Surely not right? But it would explain his anger towards you as well as the reason why he is angry right now.", "narrator");
-			scr_text("That’s it. You were done with his bullshit.", "narrator");
-			scr_text("I am going to prove to him that I’m better. That girls are good at games.", "mc");
+			scr_text("That's it. You were done with his bullshit.", "narrator");
+			scr_text("I am going to prove to him that I'm better. That girls are good at games.", "mc");
 			scr_set_jump("top frag");
 		break;
 		
 		case "friday - reach out":
 			scr_set_bg(noone);
 			scr_text("After a long week of moving in, classes, exploring the campus, and doing homework, Friday finally arrives.", "narrator");
-			scr_text("You weren’t sure if it was because you were excited to absolutely crush Devon in Valliant, or maybe it was just because you are getting to spend time with him and get to know him better, but you were so excited but also slightly nervous.", "narrator");
-			scr_text("It’s just that, this whole thing with him had been such a rollercoaster but somehow it ended on a good note, a great one even! You were going to his place, to duo in Valliant, together...... alone......", "narrator");
+			scr_text("You weren't sure if it was because you were excited to absolutely crush Devon in Valliant, or maybe it was just because you are getting to spend time with him and get to know him better, but you were so excited but also slightly nervous.", "narrator");
+			scr_text("It's just that, this whole thing with him had been such a rollercoaster but somehow it ended on a good note, a great one even! You were going to his place, to duo in Valliant, together...... alone......", "narrator");
 			scr_text("Oh. My. God...?", "mc");
 			scr_text("We're going to be alone...", "mc");
 			scr_text("Your face turns a bright shade of red thinking about you two being alone together, in his room, playing games...", "narrator");
@@ -304,16 +319,16 @@ function scr_game_text(_scene_id) {
 			scr_text("You smile, looking up at him.", "narrator");
 			scr_set_sprite(spr_devon_smirk, false);
 			scr_text("\"Hey\"", "devon");
-			// devon room bg
+			scr_set_bg(bg_bedroom);
 			scr_set_sprite(noone);
 			scr_text("His room is pretty bland, basically the same as it is given to you when you first move in, except for his desk which harbors a massive PC and 3 monitors as well as the singular poster on his wall along with LED lights around the room.", "narrator");
 			scr_text("You move towards his desk so you can pull out your laptop. Back at your dorm, you have an actual PC set up but you also have a gaming laptop for cases like these in school where you need to play games on the fly.", "narrator");
 			scr_text("Your laptop kind of sucked since you got it secondhand and it is an older model, but it does what it needs to do, minus the fact that it gets extremely hot if you even attempt to open any game on it.", "narrator");
 			scr_text("Devon closes the door behind you and pulls up an extra chair behind you so you can sit at the desk with him. As you take a seat he sits down next to you in his chair and turns on his PC.", "narrator");
 			scr_set_sprite(spr_devon_smirk);
-			scr_text("\"Let’s see what you got bubble brains.\"", "devon");
+			scr_text("\"Let's see what you got bubble brains.\"", "devon");
 			scr_text("After a few rounds in the game, after he dies, Devon gets up to quickly use the bathroom. You had ended up dying with him to a Raise bomb and so you just sat flipping through the other 3 players left, watching the round play out.", "narrator");
-			scr_text("After a few seconds you feel a buzz coming to your right. You look over to see Devon’s phone face up on the table. Without meaning to, you saw what the notification was.", "narrator");
+			scr_text("After a few seconds you feel a buzz coming to your right. You look over to see Devon's phone face up on the table. Without meaning to, you saw what the notification was.", "narrator");
 			scr_text("It was from egirls.ff. You were not able to read the contents of the message since the phone had to be unlocked with face ID, but you could see that it was from egirls.ff.", "narrator");
 			scr_text("He has egirls.ff?", "mc");
 			scr_text("Oh my god, he might have seen my profile on it...!", "mc");
@@ -331,19 +346,201 @@ function scr_game_text(_scene_id) {
 			scr_text("It worked, you ended up top fragging at the end of the game, scoring 2 aces winning your team the last two rounds and ultimately the game.", "narrator");
 			scr_text("You were so siked not only that you guys had won, but also that you had top fragged.", "narrator");
 			scr_set_sprite(spr_devon_angry);
-			scr_text("You turn to Devon with a big proud smile on your face, holding up your hand for a high five, but are met with an angry hand pulling your hand down. It didn’t make sense, Devon’s face was full of rage, but you guys had just won.", "narrator");
-			scr_text("\"Don’t give me that shit you fucking bitch.\"", "devon");
+			scr_text("You turn to Devon with a big proud smile on your face, holding up your hand for a high five, but are met with an angry hand pulling your hand down. It didn't make sense, Devon's face was full of rage, but you guys had just won.", "narrator");
+			scr_text("\"Don't give me that shit you fucking bitch.\"", "devon");
 			scr_text("\"What? We won Devon!\"", "mc");
 			scr_text("You were starting to get angry.", "narrator");
 			scr_text("\"It doesn't matter if we won, you won us that game, not me! You top fragged not me! What the fuck are you trying to do?!\"", "devon").
-			scr_text("\"I am supposed to be better! You must have fucked with my settings while I was pissing. You fucking bitch. I knew I shouldn’t have trusted you...\"", "devon");
+			scr_text("\"I am supposed to be better! You must have fucked with my settings while I was pissing. You fucking bitch. I knew I shouldn't have trusted you...\"", "devon");
 			scr_text("\"I-\"", "mc");
 			scr_text("You were unable to speak. How in the world could someone be so messed up that they start blaming their teammate for winning?!?! It just did not make sense to you.", "narrator");
-			scr_text("\"I don’t know what has gotten into your stupid head but someone clearly hurt you. And I don't know what's worse, yelling at the one person who is trying to help or turning to egirls.ff as a coping mechanism.\"", "mc");
+			scr_text("\"I don't know what has gotten into your stupid head but someone clearly hurt you. And I don't know what's worse, yelling at the one person who is trying to help or turning to egirls.ff as a coping mechanism.\"", "mc");
 			scr_text("You start to angrily pack up your stuff. You were so done with his shit and at this point could no longer take it.", "narrator");
 			scr_text("There was no way in hell you were going to play another game with him today. You grab all of your stuff before angrily walking out the door, slamming it on your way out.", "narrator");
-			scr_text("As you leave you realize that Devon did not say a word back to you as you were leaving. He didn’t even move. He just sat there in silence.", "narrator");
+			scr_text("As you leave you realize that Devon did not say a word back to you as you were leaving. He didn't even move. He just sat there in silence.", "narrator");
 			scr_text("You did not care to look over at his face, but something was telling you that you fucked up big time. ", "narrator");
+		break;
+		#endregion
+		
+		#region // Arianna
+		case "arianna":
+			scr_set_bg(bg_classroom);
+			scr_set_sprite(noone);
+			scr_text("After a weekend of radio silence from Devon, it was, unfortunately, Monday, meaning you have to see him in class. What is even worse is that your professor is doing check-ins with each group.", "narrator");
+			scr_text("As you get to class, however, you see that Devon is missing.", "narrator");
+			scr_text("Maybe he is just late?", "mc");
+			scr_text("Class starts and he is still nowhere to be seen.", "narrator");
+			scr_text("Professor Ninez starts making his rounds to each group, asking how it was playing together. Once he gets to you, however, he sighs seeing that Devon is nowhere to be found.", "narrator");
+			scr_text("\"I'm sorry professor-\"", "mc");
+			scr_text("\"No, it's perfectly fine. He has a.... History of not working well with people.\"", "ninez");
+			scr_text("\"What do you mean?\"", "mc");
+			scr_text("\"Well, this is his second time taking this class. He used to be so good until something happened last year. He was partnered with a girl named Arianna. Arianna was interesting, to say the least.\"", "ninez");
+			scr_text("\"Back then Devon used to be super nice, but she changed him. They started dating halfway through the semester, and she was not good for him. I wanted to change their pairing but she would not let me.\"", "ninez");
+			scr_text("\"\"Towards the end of the semester, when the time for the final evaluation came, she broke up with him. I do not know the reason why she did it but all I know is after that Devon changed.\"", "ninez");
+			scr_text("\"I offered a way for him to pass the class but he refused. In the end, she ended up passing, leaving him in the dust.\"", "ninez");
+			scr_text("You were shocked. Never did you expect that type of backstory for him, but now you could see how and why he is like how he is.", "narrator");
+			scr_text("You felt bad for him, knowing that none of this was his fault, but he was just deeply hurt and traumatized by his past relationship.", "narrator");
+			scr_text("\"I thought by now he would have grown past that but it seems like he is still hurt by her. Because of that, if you want a new partner I would be happy to give you one.\"", "ninez");
+			scr_text("Professor Ninez turns back to you, expecting you to have some sort of relieved expression on your face but to his surprise, your face shines with determination.", "narrator");
+			scr_text("Yes, you did feel bad for him, but more than anything you knew that your new mission was not to give up and ask for a new partner, but instead to help him.", "narrator");
+			scr_text("You knew that you had to get to the bottom of whatever was still haunting him from his past. You had to be the one to fix him.", "narrator");
+			scr_text("\"No Professor, it's all good. I'm up for the challenge!\"", "mc");
+			scr_text("Professor Ninez was shocked, to say the least, but he let you off with a smile before going to the next group.", "narrator");
+			scr_text("\"Good luck!\"", "ninez");
+			scr_text("After all your classes for the day, you raced home and went onto the school's database to try and find anything you could about Arianna. From the database, you were able to find her last name. From there you searched for her on Peggle, the internet search engine.", "narrator");
+			scr_text("There were a few matches to her name and after some digging you were able to find her LockedIn account, the business and employment-focused social media platform for gamers.", "narrator");
+			scr_text("Finally, from there you were able to find her Gamertag, \"Ariiannaxo\". But that was it, Every search you did with her Gamertag came up blank. No MyViews videos, no ClickClack videos, no nothing.", "narrator");
+			scr_text("Damn...", "mc");
+			scr_text("You almost give up on trying to find anything more about her, until you suddenly get a notification on egirls.ff.", "narrator");
+			scr_text("Wait, that's it!", "mc");
+			scr_text("You quickly open up Mist, the video game distribution platform. On there, you search for her username and find her account.", "narrator");
+			scr_text("Ah ha!", "mc");
+			scr_text("Mist has this neat thing, unlike most other platforms in which you can see what the user's old username was. You quickly click on hers to see that before she had \"Ariiannaxo\" she used to be \"mhmari\".", "narrator");
+			scr_text("\"Found you!\"", "mc");
+			scr_text("You smile and open up egirls.ff and search \"mhmari\".", "narrator");
+			scr_text("Why hadn't you thought of it before? Of course there was no way \"Ariannaxo\" was going to show up in any searches, especially on egirls.ff, because that is her main account, her real account.", "narrator");
+			scr_text("If she were to use egirls.ff she would have had to either make a new account to be her real one or a new one to be the one she used on egirls.ff. Either way, since Ariannaxo did not show up anywhere, \"mhmari\" was surely going to!", "narrator");
+			scr_text("And you were right, it came up. Right there you could see everything about her, all of the clips of her, her match history, and her egirls.ff profile.", "narrator");
+			scr_text("This was perfect, your plan was going to work. Now all you needed was to enact it.", "narrator");
+			scr_set_jump("mhmari");
+		break;
+		#endregion
+		
+		#region // mhmari
+		case "mhmari":
+			scr_text("Finally, Thursday came, meaning it was time to enact your plan. You quickly rushed home after your last class and turned on your computer, checking your egirls.ff notifications.", "narrator");
+			scr_text("And surely enough, there it was, Arianna's response to you. You quickly messaged her back asking if she was free soon, and she replied almost instantly saying that now was a good time.", "narrator");
+			scr_text("It's all going according to plan!", "mc");
+			scr_text("You start getting set up to play with her. You had a pretty devious plan, but one that would certainly work. It all depended however on one crucial thing.", "narrator");
+			scr_text("You adjust your microphone and greet her.", "narrator");
+			scr_text("\"Hi!\"", "mc");
+			scr_text("\"Hi!!!\"", "arianna");
+			scr_text("Her voice is aggressively high-pitched.", "narrator");
+			scr_text("\"Thank you so much for playing with me!\"", "mc");
+			scr_text("\"Of course! I am happy to play with you! I love playing with other girls since it is always a refresher from the standard misogynistic guy.\"", "arianna");
+			scr_text("You two continue on talking about Valliant and just making simple shallow conversions before starting a game together.", "narrator");
+			scr_text("After a while of playing you hear something starting in the distance.", "narrator");
+			scr_text("There it is...", "mc");
+			scr_text("Right on cue, music starts from somewhere outside.", "narrator");
+			scr_text("Every Thursday in the school's freshman dorm quad, they blast music and have games happening outside to encourage freshmen to get out of their dorms and essentially touch grass.", "narrator");
+			scr_text("\"I'm so sorry about that. For some reason my school likes to blast music every Thursday in the quad to encourage the freshmen to go outside and touch grass.\"", "mc");
+			scr_text("\"Oh? Wait, do you go to VGC?\"", "arianna");
+			scr_text("\"Huh? Yeah I do! Why?\"", "mc");
+			scr_text("\"OMG I go there!!\"", "arianna");
+			scr_text("\"OMG really?! What year and track are you?\"", "mc");
+			scr_text("\"I'm a sophomore in the FPS track!\"", "arianna");
+			scr_text("\"No way! I am a freshman in the FPS track!\"", "mc");
+			scr_text("\"That's insane omg! What's your favorite class currently?\"", "arianna");
+			scr_text("She fell right into my trap.", "mc");
+			scr_text("\"Well right now I am really enjoying Intro to Team Games!\"", "mc");
+			scr_text("\"Oh god, that class.\"", "arianna");
+			scr_text("You notice a sad tone in her voice.", "narrator");
+			scr_text("\"Oh I'm sorry, did something happen?\"", "mc");
+			scr_text("\"Oh, it's nothing, it's just I had a terrible time in that class last year. My ex was my partner for the class, during which we were dating. It was about 2 weeks before the final when I caught him, funny enough, using egirls.ff.\"", "arianna");
+			scr_text("\"He was playing with some girl. At first, I did not think that much of it but as the week continued and it ended up being a week before the final, I could not ignore it.\"", "arianna");
+			scr_text("\"He was playing Valliant every day with her and constantly messaging her. I ended up breaking up with him.\"", "arianna");
+			scr_text("\"Oh my gosh, I'm so sorry.\"", "mc");
+			scr_text("You can understand where she is coming from in wanting to break up with him but something about this story feels wrong.", "narrator");
+			scr_text("Professor Ninez had mentioned that she was not good for him, so why does he sound like he is in the wrong here?", "narrator");
+			scr_text("But the part that was nagging at you the most was that Professor Ninez said that Devon had chosen to fail the class but Arianna passed.", "narrator");
+			scr_text("From Professor Ninez's account, it sounded like Devon was more heartbroken than Arianna, but from her story, it sounds like it should have been the other way around.", "narrator");
+			scr_text("You two continue to talk about VGC as your game continues.", "narrator");
+			scr_text("In the end, you guys end up winning and she actually gives you her Mayhem, the app used by gamers to communicate with each other, username so you guys can talk to each other after the game and possibly play together more.", "narrator");
+			scr_text("For the rest of the day, you can not stop thinking about Ariana and Devon. What was the true story? Something is just not adding up. Why does Devon continue to act the way he does? Something is missing...", "narrator");
+			scr_set_jump("friday again");
+		break;
+		#endregion
+		
+		#region // Friday Again
+		case "friday again":
+			scr_set_bg(noone);
+			scr_text("After your class the next day, you begin to head over to Devon's again since it was Friday.", "narrator");
+			scr_text("You had not talked to him at all this week but you had just assumed he would be free again on Friday at the same time. Also, you felt like if you tried to talk to him, he would have ignored you or cursed you out.", "narrator");
+			scr_text("Once you got to his room you knocked on the door only to hear an angry Devon on the other side.", "narrator");
+			scr_set_bg(bg_bedroom);
+			scr_text("\"Arianna I'm going to have to call you later.\"", "devon");
+			scr_text("As you hear this, Devon opens his door with an angry expression on his face.", "narrator");
+			scr_set_sprite(spr_devon_angry);
+			scr_text("\"Oh god, it's you. What the fuck do you want?\"", "devon");
+			scr_text("Instead of his usual black Valliant shirt and baggy pants, he is instead wearing a black tight-fitting tank top and pajama pants. He is positioned so that his right arm is resting on the top of the door frame, with his body arching over so that he is looking down at you.", "narrator");
+			scr_text("You never noticed before due to him always wearing baggy pants and a baggy shirt with a jacket, but his figure is pretty built. His waist is super thin but his shoulders are super broad, and his arms are super veiny against his muscles.", "narrator");
+			scr_text("You quickly turn your face away as you can feel it heating up from his gaze.", "narrator");
+			scr_text("\"I- um. We have to… its Friday.\"", "mc");
+			scr_text("\"The fuck if I care bitch. I was in the middle of something.\"", "devon");
+			scr_text("He moves to close the door and you start to panic. This could be it. You needed him to let you in metaphorically and physically otherwise there was no hope of actually fixing him.", "narrator");
+			scr_text("You did not know what to do. You felt hopeless once again until you remembered what you heard before he opened the door. You were so distracted by his figure that it almost slipped your mind.", "narrator");
+			scr_text("He was talking to Arianna.", "narrator");
+			scr_text("It's now or never.", "mc");
+			scr_text("You turn to look at him, exposing your bright red face to him.", "narrator");
+			scr_text("\"Look you can continue to talk to your toxic ex and sabotage the only chance you have at getting out of this toxic situationship, or you can fucking listen to me and let me in.\"", "mc");
+			scr_text("Devon looks at you first with a face full of shock and then a face full of anger.", "narrator");
+			scr_text("He grabs you by the collar of your shirt before pulling you into his room and throwing you onto his bed and then slamming his door shut.", "narrator");
+			scr_shake_signal(15, 10);
+			scr_text("\"What the fuck did you just say bitch?!\"", "devon");
+			scr_text("He walks back to you, eyes ablaze. You quickly back up as far as you can on his bed, you back against the frame.", "narrator");
+			scr_text("\"I said what I said. I know about Arianna and I know what she did to you. But that doesn't mean you should throw your whole life away for her!\"", "mc");
+			scr_shake_signal(20,, 10);
+			scr_text("\"Shut the fuck up!!\"", "devon");
+			scr_text("You stand your ground, knowing this was the only way to get to him. He wouldn't hurt you, but he should as hell would yell and scream hoping you would get scared enough to leave. He was all bark no bite.", "narrator");
+			scr_text("\"Devon I'm just trying to help you. You need to leave her alone. She does not want anything to do with you, she just wants to use you.\"", "devon");
+			scr_shake_signal(20,, 10);
+			scr_text("\"WHAT THE FUCK WOULD YOU KNOW BITCH!\"", "devon");
+			scr_text("Devon turns to face away from you.", "narrator");
+			scr_text("\"You're right, I do not know the full story but I know enough. I know that she broke up with you after you hired someone on egirls.ff to play with you. That person showed you what it was like actually to be loved, not to be used. Arianna saw this and got scared, so she left you at your most vulnerable, allowing you to hold onto her like a flanker hugging a wall when they are rotating.\"", "mc");
+			scr_text("You inch closer to the end of the bed, trying to get through to him.", "narrator");
+			scr_shake_signal(25, 10);
+			scr_text("\"You know NOTHING!!\"", "devon");
+			scr_text("His back continues to face you as he tries to hold up his tough guy attitude but you can hear his voice cracking.", "narrator");
+			scr_text("\"Devon...\"", "mc");
+			scr_text("You inch to the edge of the bed.", "narrator");
+			scr_text("\"I just want to help you. Arianna is not good for you. Please you can not continue on like this.\"", "mc");
+			scr_shake_signal(25, 10);
+			scr_text("\"Just, shut up!\"", "devon");
+			scr_text("His voice is breaking. He takes his face into his hands and stumbles back onto the bed, his front facing the ceiling as he starts to sob. You weren't sure what to do except just stay where you are next to him.", "narrator");
+			scr_set_sprite(spr_portrait_devon);
+			scr_text("\"...Her name was " + global.mc_tag + "...\"", "devon");
+			scr_shake_signal(20, 14);
+			scr_text("What...?", "mc");
+			scr_text("Wait what... Wait hold on. There's..... There's no way he just...", "mc");
+			scr_text("\"I met her on egirls.ff. I- I didn't mean to but Arianna…. She cheated on me at a party. I found out from a friend. Arianna never knew. And I- I was so heartbroken that I needed someone to talk to.\"", "devon");
+			scr_text("He manages to choke out his words between sobs.", "narrator");
+			scr_text("Hold on..... There's... no way...", "mc");
+			scr_text("Then all at once it made sense. His voice sounding familiar, the timeline, everything. It was you. You were the one he hired on egirls.ff. He was the one. He...", "narrator");
+			scr_text("\"But then she, Arianna, she fucking found out and broke up with me. I was fine to overlook it, I just needed her, but she freaked out, and blamed me for everything. She blocked [MC Gamertag] on everything and I was unable to find her anywhere. She made me change all of my handles.\"", "narrator");
+			scr_text("Devon punches the bed, trying to hold back his tears.", "narrator");
+			scr_text("So that's why...", "mc");
+			scr_text("Last year you had been using " + global.mc_tag + " as your gamertag while having people hire you on egirls.ff. It was different from your real one.", "narrator");
+			scr_text("One day something under the name \"Dexadxon\" hired you on egirls.ff. He was sad, saying his girlfriend had just cheated on him and he needed to play some Valliant with someone to cheer up.", "narrator");
+			scr_text("You two played together nonstop for a week while he filled you in on everything that was going on with her.", "narrator");
+			scr_text("You told him enormous amounts of times to break up with her but he always said he couldn't.", "narrator");
+			scr_text("You remember how much you ended up liking him, to the point that on that Saturday when he went radio silence, you were going to confess to him. But then, he was gone. All of a sudden you had gotten an angry message from him telling you to never talk to him again. He blocked you on everything.", "narrator");
+			scr_text("Soon after that, the flood of punishments came on your Valliant account to the point where you deleted it and had to create a new one. You had to restart your egirls.ff account from scratch.", "narrator");
+			scr_text("You searched for him but were unable to find him, thinking to yourself that it was a lost cause and that you did something wrong and he hated you. But, here he was, right in front of you.", "narrator");
+			scr_text("Before he can punch the bed again, you grab his hand. His body flinches from the contact and he moves his hand to look at you. His eyes are red and puffy from crying so much.", "narrator");
+			scr_text("\"Devon, I know you aren't going to believe me but I am " + global.mc_tag + ". I never knew... I thought I did something wrong and you blocked me. I had to change my username because my Valliant and egirls.ff account got flooded with reports. I kept searching for you but I couldn't find you anywhere-\"", "mc");
+			scr_text("He cuts you off by grabbing your hands and sitting up.", "narrator");
+			scr_set_sprite(spr_devon_angry);
+			scr_shake_signal(15, 10);
+			scr_text("\"You're lying. You have to be!\"", "devon");
+			scr_text("His face is bright red but his voice sounds angry.", "narrator");
+			scr_text("\"I'm not, why would I?!\"", "mc");
+			scr_text("He throws your hands out of his.", "narrator");
+			scr_shake_signal(15, 10);
+			scr_text("\"Because this is all just a ploy for me to open up to you! You just want to see me at my worst so you can use me, make fun of me!\"", "devon");
+			scr_text("\"Devon! Listen to me!\"", "mc");
+			scr_shake_signal(20, 10);
+			scr_text("\"NO! IM DONE FUCKING LISTENING TO YOU! LEAVE ME ALONE!\"", "devon");
+			scr_text("He grabs you once again and forces you to his door, moving to close it. But before he can open it, you stand in front of it and yell.", "narrator");
+			scr_shake_signal(15, 15);
+			scr_text("\"Your username was \"Dexadxon\"! I knew you! Devon hell I was falling in love with you. I was going to confess to you but you blocked me!\"", "mc");
+			scr_text("His eyes glow with a confused anger. It looks like he is fighting himself internally, on the outside he is angry, but the tears tell you otherwise, inside he is lost and hurting.", "narrator");
+			scr_text("You reach out and grab his hand.", "narrator");
+			scr_text("He stands there immobile, paralyzed by his inability to figure out what he was feeling at this moment.", "narrator");
+			scr_shake_signal(25, 12);
+			scr_set_sprite(spr_devon_blush);
+			scr_text("He looks down at you and instead of doing what you thought he was going to do, yell at you and throw you out of his dorm, he grabs your face and kisses you.", "narrator");
+			scr_text("Your face grows to be about as red as a tomato as Devon grabs you by your waist and forcefully pushes you to his bed. The kiss gets rougher and rougher as you two continue.", "narrator");
+			scr_text("It felt like he was done trying to hold back anything, done trying to discern what he wanted. He was done being paralyzed by thought, right now he needed action, he needed to just do.", "narrator");
 		break;
 		#endregion
 	}

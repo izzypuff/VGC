@@ -95,16 +95,22 @@ function scr_jump(_link_id) {
 		array_delete(shake_signal, 0, page_amount)
 		page_amount = 0;
 		cur_page = 0;
+		last_portrait = 0;
+		last_bg = 0;
+		last_signal = 0;	
 				
+		array_delete(option, 0, option_amount);
+		array_delete(option_link_id, 0, option_amount);
+				
+		jump_link = "";
 		scr_game_text(_link_id);
 		scr_text_defaults();
 		setup = false; // setup page lengths again
-				
+		
 		// clear options
-		array_delete(option, 0, option_amount);
-		array_delete(option_link_id, 0, option_amount);
+		option_link_id[0] = -1;
 		option_amount = 0;
-		option_pos = 0;
+		option_pos = 0;	
 	}
 }
 
